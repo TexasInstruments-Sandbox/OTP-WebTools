@@ -39,13 +39,91 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, var(--ti-red) 0%, var(--ti-red-dark) 100%);
     min-height: 100vh;
-    padding: 2rem 1rem;
+    padding: 0;
     color: var(--text-primary);
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.nav-brand-section:hover {
+    opacity: 0.8;
+}
+
+.nav-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-tagline {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.nav-link svg {
+    flex-shrink: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 header {
@@ -1220,8 +1298,38 @@ button.secondary:hover {
 }
 
 @media (max-width: 768px) {
-    body {
+    .container {
         padding: 1rem 0.5rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-brand-section {
+        text-align: center;
+    }
+
+    .nav-brand {
+        font-size: 1.1rem;
+    }
+
+    .nav-tagline {
+        font-size: 0.7rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.875rem;
+        padding: 0.625rem 1rem;
     }
 
     header h1 {
