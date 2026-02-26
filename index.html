@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TI SCI Web Tools</title>
+    <title>TI Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>TI SCI Web Tools</h1>
-            <p class="subtitle">Utilities for Texas Instruments System Control Interface</p>
-            <a href="https://software-dl.ti.com/tisci/esd/latest/index.html"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="doc-link">
-                View TI SCI Documentation
-            </a>
+            <h1>TI Tools</h1>
+            <p class="subtitle">Web-based utilities for developing with TI MPU processors</p>
         </header>
 
         <main>
             <section class="landing-section">
-                <h2>Available Tools</h2>
+                <h2>Security Tools</h2>
+                <p class="section-description">Tools for OTP key management and security configuration</p>
                 <div class="tools-grid">
                     <a href="keywriter.html" class="tool-card">
                         <h3>OTP Key Writer Error Code Decoder</h3>
@@ -34,25 +29,44 @@
                         <p>Generate keywriter-lite blobs for programming OTP keys on AM62Lx devices. Configure SMPKH, BMPKH, key counts, software revisions, and more.</p>
                         <span class="tool-link-arrow">View Tool →</span>
                     </a>
+                </div>
+            </section>
+
+            <section class="landing-section">
+                <h2>From Our Partners</h2>
+                <p class="section-description">Helpful tools and resources from the TI community</p>
+                <div class="tools-grid">
+                    <a href="https://pinout.beagley.ai/" target="_blank" rel="noopener noreferrer" class="tool-card partner-card">
+                        <h3>BeagleY-AI Pinout Reference</h3>
+                        <p>Interactive pinout diagrams and reference for BeagleY-AI boards. Quickly find pin configurations, alternate functions, and electrical specifications.</p>
+                        <span class="tool-link-arrow">Visit Site →</span>
+                    </a>
 
                     <div class="tool-card coming-soon">
-                        <h3>More Tools Coming Soon</h3>
-                        <p>Additional TI SCI utilities and debugging tools will be added to this suite.</p>
+                        <h3>More Partner Tools Coming Soon</h3>
+                        <p>We're working with partners to bring you more helpful development tools and resources.</p>
                         <span class="tool-link-arrow disabled">Coming Soon</span>
                     </div>
                 </div>
             </section>
 
             <section class="info-section">
-                <h2>About TI SCI</h2>
+                <h2>About</h2>
                 <p>
-                    The Texas Instruments System Control Interface (TI SCI) protocol is used for communication
-                    between various processing units and the System Controller. These tools help developers
-                    debug and understand TI SCI-related operations.
+                    This collection of web-based tools helps developers working with Texas Instruments MPU processors
+                    and development platforms. From security configuration to hardware reference materials, these
+                    utilities are designed to streamline your development workflow.
                 </p>
                 <div class="resources">
-                    <h3>Resources</h3>
+                    <h3>TI Resources</h3>
                     <ul>
+                        <li>
+                            <a href="https://software-dl.ti.com/tisci/esd/latest/index.html"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                TI SCI Protocol Documentation
+                            </a>
+                        </li>
                         <li>
                             <a href="https://software-dl.ti.com/tisci/esd/latest/2_tisci_msgs/security/keywriter.html"
                                target="_blank"
@@ -61,10 +75,10 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://software-dl.ti.com/tisci/esd/latest/index.html"
+                            <a href="https://github.com/TexasInstruments/security-utils/tree/release"
                                target="_blank"
                                rel="noopener noreferrer">
-                                TI SCI Protocol Documentation
+                                TI Security Utils (GitHub)
                             </a>
                         </li>
                     </ul>
@@ -73,7 +87,7 @@
         </main>
 
         <footer>
-            <p>TI SCI Web Tools | Utilities for Texas Instruments System Control Interface</p>
+            <p>TI Tools | Web utilities for TI MPU processor development</p>
         </footer>
     </div>
 </body>

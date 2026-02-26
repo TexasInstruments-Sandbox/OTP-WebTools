@@ -458,6 +458,21 @@ footer {
     text-decoration: underline;
 }
 
+.section-description {
+    color: var(--ti-blue-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.partner-card {
+    border: 2px solid var(--ti-cyan);
+}
+
+.partner-card:hover {
+    border-color: var(--ti-teal);
+}
+
 /* Security Utils / Key Configuration Styles */
 .config-group {
     background: var(--ti-white);
