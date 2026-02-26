@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI SCI Web Tools - OTP Key Writer Error Code Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TI SCI Web Tools</h1>
+            <p class="subtitle">OTP Key Writer Error Code Decoder</p>
+            <div class="header-links">
+                <a href="index.html" class="doc-link">
+                    ← Back to Tools
+                </a>
+                <a href="https://software-dl.ti.com/tisci/esd/latest/2_tisci_msgs/security/keywriter.html"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="doc-link">
+                    View Official Documentation
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="errorCode">Enter Error Code:</label>
+                    <input
+                        type="text"
+                        id="errorCode"
+                        placeholder="e.g., 0x00000004, 4, 0b100"
+                        autocomplete="off"
+                    >
+                    <button id="decodeBtn">Decode</button>
+                    <button id="clearBtn" class="secondary">Clear</button>
+                </div>
+                <div class="format-hint">
+                    <p><strong>Supported formats:</strong></p>
+                    <ul>
+                        <li><strong>Hexadecimal:</strong> 0x00000004 or 0x4</li>
+                        <li><strong>Decimal:</strong> 4</li>
+                        <li><strong>Binary:</strong> 0b100 or 0b00000100</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Decoded Errors</h2>
+                <div id="resultsContainer"></div>
+            </section>
+
+            <section class="reference-section">
+                <h2>Error Code Reference</h2>
+                <div class="table-container">
+                    <table id="referenceTable">
+                        <thead>
+                            <tr>
+                                <th>Bit</th>
+                                <th>Hex Value</th>
+                                <th>Error Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="referenceTableBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>TI SCI Web Tools | OTP Key Writer Error Code Decoder</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
