@@ -14,7 +14,55 @@
         </header>
 
         <main>
-            <section class="landing-section">
+            <!-- Category Filter Buttons -->
+            <section class="category-filter-section">
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">All Tools</button>
+                    <button class="category-btn" data-category="system">System Configuration</button>
+                    <button class="category-btn" data-category="security">Security Tools</button>
+                    <button class="category-btn" data-category="partner">Partner Tools</button>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input
+                            type="text"
+                            id="toolSearch"
+                            placeholder="Search tools by name, category, or keywords..."
+                            title="Search through all available tools"
+                        >
+                        <button id="clearSearch" class="clear-search-btn" title="Clear search" style="display: none;">×</button>
+                    </div>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </section>
+
+            <section class="landing-section" data-category="system">
+                <h2>System Configuration</h2>
+                <p class="section-description">Tools for Linux kernel and system configuration</p>
+                <div class="tools-grid">
+                    <a href="devicetree.html" class="tool-card">
+                        <h3>Device Tree Validator</h3>
+                        <p>Validate Device Tree Source (DTS) files for syntax errors, structural issues, and best practices. Includes TI-specific guidance and visual tree representation.</p>
+                        <span class="tool-link-arrow">View Tool →</span>
+                    </a>
+
+                    <div class="tool-card coming-soon">
+                        <h3>More System Tools Coming Soon</h3>
+                        <p>Additional configuration and development tools for TI MPU processors are in development.</p>
+                        <span class="tool-link-arrow disabled">Coming Soon</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="landing-section" data-category="security">
                 <h2>Security Tools</h2>
                 <p class="section-description">Tools for OTP key management and security configuration</p>
                 <div class="tools-grid">
@@ -32,7 +80,7 @@
                 </div>
             </section>
 
-            <section class="landing-section">
+            <section class="landing-section" data-category="partner">
                 <h2>From Our Partners</h2>
                 <p class="section-description">Helpful tools and resources from the TI community</p>
                 <div class="tools-grid">
@@ -90,5 +138,7 @@
             <p>TI Tools | Web utilities for TI MPU processor development</p>
         </footer>
     </div>
+
+    <script src="search.js"></script>
 </body>
 </html>

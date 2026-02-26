@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI Tools - Device Tree Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TI Tools</h1>
+            <p class="subtitle">Device Tree Validator for Linux</p>
+            <div class="header-links">
+                <a href="index.html" class="doc-link">
+                    ← Back to Tools
+                </a>
+                <a href="https://www.kernel.org/doc/Documentation/devicetree/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="doc-link">
+                    Device Tree Documentation
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="info-section">
+                <div class="disclaimer-box" style="margin-bottom: 1.5rem;">
+                    <h3>🚧 Beta / Work in Progress</h3>
+                    <p><strong>This tool is currently in beta and under active development.</strong></p>
+                    <p>While it provides useful syntax checking and validation, it may not catch all issues. Always test your device trees thoroughly and validate with the official dtc compiler before deployment.</p>
+                </div>
+
+                <div class="experimental-warning">
+                    <h3>📋 Web-Based Validator</h3>
+                    <p><strong>This tool provides syntax validation and best practice checks for Device Tree Source (DTS) files.</strong></p>
+                    <p>For compilation and complete validation, use the official Device Tree Compiler (dtc):</p>
+                    <p><code>dtc -I dts -O dtb -o output.dtb input.dts</code></p>
+                    <p>This tool is useful for quick syntax checks, learning device tree structure, and catching common mistakes before compilation.</p>
+                    <p><strong>Note:</strong> Preprocessor directives (#include, #define, /dts-v1/) are recognized and preserved but not evaluated. Macros and constants will be displayed as-is.</p>
+                </div>
+            </section>
+
+            <section class="input-section">
+                <h2>Device Tree Source Input</h2>
+
+                <div class="button-group" style="margin-bottom: 1rem;">
+                    <button id="validateBtn">Validate Device Tree</button>
+                    <button id="clearBtn" class="secondary">Clear</button>
+                    <button id="templateBtn" class="secondary">Load Template</button>
+                    <button id="uploadBtn" class="secondary">Upload DTS File</button>
+                    <input type="file" id="fileInput" accept=".dts,.dtsi" style="display: none;">
+                </div>
+
+                <div id="templateSelector" style="display: none; margin-bottom: 1rem;">
+                    <select id="templateSelect">
+                        <option value="">Select a template...</option>
+                        <option value="basic">Basic Device Tree</option>
+                        <option value="i2c">I2C Device</option>
+                        <option value="spi">SPI Device</option>
+                        <option value="gpio">GPIO Configuration</option>
+                        <option value="pinmux">Pinmux Configuration</option>
+                        <option value="interrupt">Interrupt Controller</option>
+                        <option value="clock">Clock Provider</option>
+                        <option value="ti-am62">TI AM62x Board</option>
+                    </select>
+                    <button id="loadTemplateBtn" class="secondary">Load</button>
+                    <button id="cancelTemplateBtn" class="secondary">Cancel</button>
+                </div>
+
+                <label for="dtsInput">Enter your Device Tree Source:</label>
+                <textarea id="dtsInput" rows="20" placeholder="Paste your .dts or .dtsi content here..."></textarea>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Validation Results</h2>
+                <div id="summaryContainer"></div>
+                <div id="issuesContainer"></div>
+            </section>
+
+            <section class="results-section" id="treeViewSection" style="display: none;">
+                <h2>Device Tree Structure</h2>
+                <div id="treeViewContainer"></div>
+            </section>
+
+            <section class="info-section">
+                <h2>About This Tool</h2>
+                <p class="section-description">
+                    This Device Tree Validator helps you check DTS/DTSI files for common syntax errors,
+                    structural issues, and adherence to best practices. It's particularly useful for
+                    TI MPU processor development where device trees define hardware configurations.
+                </p>
+
+                <div class="config-group">
+                    <h3>What It Checks</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Syntax Errors:</strong> Malformed nodes, properties, and values</li>
+                        <li><strong>Node Structure:</strong> Proper hierarchy, naming conventions, unit addresses</li>
+                        <li><strong>Property Validation:</strong> Required properties, correct formats for reg, interrupts, etc.</li>
+                        <li><strong>References:</strong> Phandle references, label definitions and usage</li>
+                        <li><strong>Compatibility Strings:</strong> Valid format and known vendor prefixes</li>
+                        <li><strong>Best Practices:</strong> Deprecated properties, common patterns, TI-specific guidance</li>
+                    </ul>
+                </div>
+
+                <div class="config-group">
+                    <h3>Common Property Formats</h3>
+                    <div style="display: grid; gap: 0.75rem; margin-top: 1rem;">
+                        <div style="background: var(--ti-grey-light); padding: 0.75rem; border-radius: 4px;">
+                            <strong style="color: var(--ti-red);">reg:</strong> &lt;address size&gt; - e.g., <code>&lt;0x4a100000 0x1000&gt;</code>
+                        </div>
+                        <div style="background: var(--ti-grey-light); padding: 0.75rem; border-radius: 4px;">
+                            <strong style="color: var(--ti-red);">interrupts:</strong> Depends on interrupt-parent, typically <code>&lt;irq-num flags&gt;</code>
+                        </div>
+                        <div style="background: var(--ti-grey-light); padding: 0.75rem; border-radius: 4px;">
+                            <strong style="color: var(--ti-red);">compatible:</strong> String list - e.g., <code>"ti,am625-uart", "ti,am64-uart"</code>
+                        </div>
+                        <div style="background: var(--ti-grey-light); padding: 0.75rem; border-radius: 4px;">
+                            <strong style="color: var(--ti-red);">status:</strong> "okay", "disabled", "reserved", or "fail"
+                        </div>
+                        <div style="background: var(--ti-grey-light); padding: 0.75rem; border-radius: 4px;">
+                            <strong style="color: var(--ti-red);">phandles:</strong> Reference using &amp;label or <code>&lt;phandle-value&gt;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-group" style="border-left: 4px solid var(--ti-teal);">
+                    <h3>TI-Specific Guidelines</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Use appropriate compatible strings with "ti," vendor prefix</li>
+                        <li>Include pinmux configurations for peripherals</li>
+                        <li>Specify power-domains for devices that require them</li>
+                        <li>Configure clocks and clock-names properly</li>
+                        <li>Set up interrupt routing through appropriate controllers</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>TI Tools | Device Tree Validator for Linux</p>
+        </footer>
+    </div>
+
+    <script src="devicetree.js"></script>
+</body>
+</html>
