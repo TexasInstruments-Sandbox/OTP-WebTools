@@ -2,9 +2,8 @@
 // Converts Python parse_uart_socid.py functionality to web-based tool
 
 // DOM Elements
-let hexInput, fileInput, fileButton, fileName, parseButton, clearButton, exportButton;
+let hexInput, parseButton, clearButton, exportButton;
 let resultsSection, resultsContent;
-let inputMethodRadios;
 
 // Parsed data storage
 let parsedData = null;
@@ -13,70 +12,26 @@ let parsedData = null;
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
     attachEventListeners();
-    setupInputMethods();
 });
 
 function initializeElements() {
     hexInput = document.getElementById('hexInput');
-    fileInput = document.getElementById('fileInput');
-    fileButton = document.getElementById('fileButton');
-    fileName = document.getElementById('fileName');
     parseButton = document.getElementById('parseButton');
     clearButton = document.getElementById('clearButton');
     exportButton = document.getElementById('exportButton');
     resultsSection = document.getElementById('resultsSection');
     resultsContent = document.getElementById('resultsContent');
-    inputMethodRadios = document.querySelectorAll('input[name="inputMethod"]');
 }
 
 function attachEventListeners() {
     parseButton.addEventListener('click', handleParse);
     clearButton.addEventListener('click', handleClear);
     exportButton.addEventListener('click', handleExport);
-    fileButton.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', handleFileSelect);
     hexInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' && e.ctrlKey) {
             handleParse();
         }
     });
-
-    inputMethodRadios.forEach(radio => {
-        radio.addEventListener('change', handleInputMethodChange);
-    });
-}
-
-function setupInputMethods() {
-    handleInputMethodChange();
-}
-
-function handleInputMethodChange() {
-    const selectedMethod = document.querySelector('input[name="inputMethod"]:checked').value;
-    const pasteMethod = document.getElementById('pasteMethod');
-    const fileMethod = document.getElementById('fileMethod');
-
-    if (selectedMethod === 'paste') {
-        pasteMethod.classList.add('active');
-        fileMethod.classList.remove('active');
-    } else {
-        pasteMethod.classList.remove('active');
-        fileMethod.classList.add('active');
-    }
-}
-
-function handleFileSelect(event) {
-    const file = event.target.files[0];
-    if (file) {
-        fileName.textContent = file.name;
-
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            hexInput.value = e.target.result;
-        };
-        reader.readAsText(file);
-    } else {
-        fileName.textContent = '';
-    }
 }
 
 function handleParse() {
@@ -101,8 +56,6 @@ function handleParse() {
 
 function handleClear() {
     hexInput.value = '';
-    fileName.textContent = '';
-    fileInput.value = '';
     resultsSection.style.display = 'none';
     parsedData = null;
     clearError();

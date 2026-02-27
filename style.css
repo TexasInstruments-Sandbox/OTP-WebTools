@@ -264,6 +264,26 @@ button:active {
     background-color: var(--ti-blue-dark);
 }
 
+#parseButton {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#parseButton:hover {
+    background-color: var(--ti-red);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(204, 0, 0, 0.3);
+}
+
+#clearButton {
+    background-color: var(--ti-grey);
+    color: white;
+}
+
+#clearButton:hover {
+    background-color: var(--ti-blue-dark);
+}
+
 .format-hint {
     background: var(--ti-white);
     padding: 1rem;
@@ -728,6 +748,24 @@ footer {
     border: 1px solid var(--border-color);
 }
 
+.info-section h2 {
+    color: var(--ti-blue-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.info-section h3 {
+    color: var(--ti-blue-dark);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.info-section h3:first-of-type {
+    margin-top: 1.5rem;
+}
+
 .info-section p {
     color: var(--ti-blue-dark);
     line-height: 1.6;
@@ -970,6 +1008,175 @@ button.secondary:hover {
 
 .disclaimer-box p:last-child {
     margin-bottom: 0;
+}
+
+/* Info Banner */
+.info-banner {
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border: 1px solid #2196F3;
+    border-left: 4px solid #1976D2;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.banner-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #0D47A1;
+}
+
+.banner-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.banner-content strong {
+    color: #0D47A1;
+    font-weight: 600;
+}
+
+/* Info Table */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    table-layout: fixed;
+}
+
+.info-table thead {
+    background: linear-gradient(135deg, #E3F2FD 0%, #F5F5F5 100%);
+}
+
+.info-table th {
+    padding: 1rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1565C0;
+    border-bottom: 2px solid #2196F3;
+}
+
+.info-table th:nth-child(1) {
+    width: 20%;
+}
+
+.info-table th:nth-child(2) {
+    width: 25%;
+}
+
+.info-table th:nth-child(3) {
+    width: 55%;
+}
+
+.info-table td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #E0E0E0;
+    color: var(--ti-blue-dark);
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.info-table td:first-child {
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.info-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Example Box */
+.example-box {
+    background: #F9FAFB;
+    border: 1px solid #E0E0E0;
+    border-left: 4px solid var(--ti-teal);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.25rem 0 2rem 0;
+}
+
+.example-box h3 {
+    color: var(--ti-blue-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.example-box p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.example-box pre {
+    background: #263238;
+    color: #AEDFF7;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0.75rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.example-box code {
+    font-family: 'Courier New', monospace;
+}
+
+/* Resources Box */
+.resources-box {
+    background: #FAFAFA;
+    border: 1px solid #E0E0E0;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.25rem 0 2rem 0;
+}
+
+.resources-box h3 {
+    color: var(--ti-blue-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.resources-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resources-box li {
+    margin-bottom: 0.75rem;
+    padding-left: 0;
+}
+
+.resources-box li:last-child {
+    margin-bottom: 0;
+}
+
+.resources-box a {
+    color: var(--ti-blue);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.resources-box a:hover {
+    color: var(--ti-red);
+    text-decoration: underline;
 }
 
 .result-card {
