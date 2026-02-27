@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Boot Toolkit | TI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="navbar.js"></script>
+</head>
+<body>
+    <!-- Navigation bar loaded by navbar.js -->
+
+    <div class="container">
+        <header>
+            <h1>TI Tools</h1>
+            <p class="subtitle">U-Boot Toolkit</p>
+            <div class="header-links">
+                <a href="index.html" class="doc-link">
+                    ← Back to Tools
+                </a>
+                <a href="https://docs.u-boot.org/en/latest/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="doc-link">
+                    View U-Boot Documentation
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Info Banner -->
+            <section class="info-banner">
+                <div class="banner-content">
+                    <span class="banner-icon">ℹ️</span>
+                    <div>
+                        <strong>Note:</strong> This tool helps you configure U-Boot environment variables, enable Falcon mode, and prepare boot logos for TI K3 devices. Always test configurations on development boards before deploying to production.
+                    </div>
+                </div>
+            </section>
+
+            <!-- uEnv.txt Configuration Section -->
+            <section class="input-section">
+                <h2>uEnv.txt Configuration</h2>
+                <p style="margin-bottom: 1.5rem;">Configure common U-Boot environment variables for your device.</p>
+
+                <div class="config-group">
+                    <h3>Import Existing uEnv.txt (Optional)</h3>
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label>Load existing uEnv.txt file:</label>
+                        <input type="file" id="import-uenv" accept=".txt" style="margin-top: 0.5rem;">
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: #666;">Upload an existing uEnv.txt to load its settings into the editor</p>
+                    </div>
+                </div>
+
+                <div class="config-group" style="margin-top: 1.5rem;">
+                    <h3>Boot Configuration</h3>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="bootdelay">Boot Delay (seconds):</label>
+                        <input type="number" id="bootdelay" value="2" min="0" max="10" style="max-width: 150px;">
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Time to wait before auto-boot (0 = instant boot)</p>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="bootcmd">Boot Command:</label>
+                        <textarea id="bootcmd" rows="3" placeholder="run findfdt; run envboot; bootflow scan -lb">run findfdt; run envboot; bootflow scan -lb</textarea>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Command executed to boot the system</p>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="bootargs">Kernel Boot Arguments:</label>
+                        <textarea id="bootargs" rows="4" placeholder="console=ttyS2,115200n8 earlycon=ns16550a,mmio32,0x02800000">console=ttyS2,115200n8 earlycon=ns16550a,mmio32,0x02800000</textarea>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Kernel command line parameters</p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="fdtfile">Device Tree File:</label>
+                        <input type="text" id="fdtfile" placeholder="ti/k3-am625-sk.dtb">
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Path to device tree blob relative to /boot</p>
+                    </div>
+                </div>
+
+                <div class="config-group" style="margin-top: 1.5rem;">
+                    <h3>Boot Media Configuration</h3>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="mmcdev">MMC Device Number:</label>
+                        <input type="number" id="mmcdev" value="1" min="0" max="2" style="max-width: 150px;">
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">SD card (0, 1) or eMMC device number</p>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="bootpart">Boot Partition:</label>
+                        <input type="text" id="bootpart" value="1:2" placeholder="1:2" style="max-width: 150px;">
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Format: device:partition (e.g., 1:2 for mmcblk1p2)</p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="bootdir">Boot Directory:</label>
+                        <input type="text" id="bootdir" value="/boot" placeholder="/boot">
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Directory containing kernel and device tree</p>
+                    </div>
+                </div>
+
+                <div class="config-group" style="margin-top: 1.5rem;">
+                    <h3>Network Configuration (Optional)</h3>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="ipaddr">IP Address:</label>
+                        <input type="text" id="ipaddr" placeholder="192.168.1.100">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 1rem;">
+                        <label for="serverip">TFTP Server IP:</label>
+                        <input type="text" id="serverip" placeholder="192.168.1.1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="netmask">Netmask:</label>
+                        <input type="text" id="netmask" placeholder="255.255.255.0">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Falcon Mode Section -->
+            <section class="input-section">
+                <h2>Falcon Mode Configuration</h2>
+                <p style="margin-bottom: 1.5rem;">Enable Falcon mode for fast boot (SPL directly loads Linux, bypassing U-Boot).</p>
+
+                <div class="config-group">
+                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="falcon-enable" style="margin: 0;">
+                        <label for="falcon-enable" style="font-weight: 500; margin: 0; cursor: pointer;">Enable Falcon Mode</label>
+                    </div>
+
+                    <div id="falcon-config" style="display: none;">
+                        <div class="input-group" style="margin-bottom: 1rem;">
+                            <label for="falcon-bootpart">Falcon Boot Partition:</label>
+                            <input type="text" id="falcon-bootpart" value="1:2" placeholder="1:2" style="max-width: 150px;">
+                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Partition containing kernel and args</p>
+                        </div>
+
+                        <div class="input-group" style="margin-bottom: 1rem;">
+                            <label for="falcon-args">Falcon Boot Arguments:</label>
+                            <textarea id="falcon-args" rows="3" placeholder="console=ttyS2,115200n8 root=/dev/mmcblk1p2 rootwait">console=ttyS2,115200n8 root=/dev/mmcblk1p2 rootwait</textarea>
+                            <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Kernel arguments for Falcon mode boot</p>
+                        </div>
+
+                        <div class="info-banner" style="background-color: #fff3cd; border-color: #ffc107;">
+                            <div class="banner-content">
+                                <span class="banner-icon">⚠️</span>
+                                <div>
+                                    <strong>Falcon Mode Setup Steps:</strong>
+                                    <ol style="margin: 0.5rem 0 0 1.25rem; padding: 0;">
+                                        <li>Boot normally to U-Boot prompt</li>
+                                        <li>Run: <code>spl export fdt ${loadaddr} - ${fdtaddr}</code></li>
+                                        <li>Save args: <code>fatwrite mmc ${mmcdev}:${bootpart} ${fdtaddr} args ${filesize}</code></li>
+                                        <li>Set boot mode switches for Falcon mode</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Boot Logo Section -->
+            <section class="input-section">
+                <h2>Boot Logo / Splash Screen</h2>
+                <p style="margin-bottom: 1.5rem;">Upload and configure a custom boot logo to display during startup.</p>
+
+                <div class="config-group">
+                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="logo-enable" style="margin: 0;">
+                        <label for="logo-enable" style="font-weight: 500; margin: 0; cursor: pointer;">Enable Boot Logo</label>
+                    </div>
+
+                    <div id="logo-config" style="display: none;">
+                        <div class="input-group" style="margin-bottom: 1.5rem;">
+                            <label>Upload Logo Image:</label>
+                            <input type="file" id="logo-file" accept="image/*" style="margin-top: 0.5rem;">
+                            <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: #666;">Supported formats: PNG, JPG, BMP (will be converted to BMP for U-Boot)</p>
+                        </div>
+
+                        <div id="logo-preview" style="display: none; margin-top: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Preview:</h4>
+                            <canvas id="logo-canvas" style="max-width: 100%; border: 1px solid #ddd; border-radius: 4px;"></canvas>
+                            <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                                <span id="logo-dimensions"></span>
+                            </div>
+                        </div>
+
+                        <div class="info-banner" style="margin-top: 1.5rem; background-color: #e7f3ff; border-color: #2196F3;">
+                            <div class="banner-content">
+                                <span class="banner-icon">💡</span>
+                                <div>
+                                    <strong>Boot Logo Setup:</strong>
+                                    <ul style="margin: 0.5rem 0 0 1.25rem; padding: 0;">
+                                        <li>U-Boot expects BMP format images</li>
+                                        <li>Recommended resolution: 1920x1080 or your display's native resolution</li>
+                                        <li>Save as <code>splash.bmp</code> in boot partition</li>
+                                        <li>Add to uEnv.txt: <code>splashimage=0x82000000</code></li>
+                                        <li>Load in bootcmd: <code>fatload mmc ${mmcdev}:${bootpart} ${splashimage} splash.bmp; bmp display ${splashimage}</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview and Export Section -->
+            <section class="results-section" style="display: block;">
+                <h2>Preview & Export</h2>
+
+                <div class="config-group">
+                    <h3>uEnv.txt Preview</h3>
+                    <div style="position: relative;">
+                        <pre id="uenv-preview" style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.9rem; line-height: 1.4;"><code># U-Boot Environment Configuration
+# Generated by TI Tools U-Boot Toolkit
+
+bootdelay=2
+bootcmd=run findfdt; run envboot; bootflow scan -lb
+bootargs=console=ttyS2,115200n8 earlycon=ns16550a,mmio32,0x02800000
+</code></pre>
+                        <button id="copy-btn" style="position: absolute; top: 1rem; right: 1rem; padding: 0.5rem 1rem; font-size: 0.85rem;">Copy</button>
+                    </div>
+                </div>
+
+                <div class="button-group" style="margin-top: 1.5rem;">
+                    <button type="button" id="export-btn">Download uEnv.txt</button>
+                    <button type="button" id="reset-btn" class="secondary">Reset to Defaults</button>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <h2>About This Tool</h2>
+                <p>The U-Boot Toolkit helps you configure U-Boot bootloader settings for Texas Instruments K3 processors. U-Boot is the bootloader responsible for initializing hardware and loading the Linux kernel.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.75rem;">What is uEnv.txt?</h3>
+                        <p>uEnv.txt is a text file containing U-Boot environment variables that are loaded during boot. It allows you to customize boot behavior without recompiling U-Boot.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 0.75rem;">What is Falcon Mode?</h3>
+                        <p>Falcon mode enables SPL (Secondary Program Loader) to directly load the Linux kernel, bypassing the full U-Boot stage. This significantly reduces boot time.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 0.75rem;">Boot Logo Support</h3>
+                        <p>U-Boot can display a custom splash screen during boot. The image must be in BMP format and loaded to memory before display.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 0.75rem;">Common Use Cases</h3>
+                <ul style="margin-left: 1.25rem; line-height: 1.6;">
+                    <li><strong>Custom kernel arguments:</strong> Add kernel parameters like debug options, console settings, or root filesystem location</li>
+                    <li><strong>Network boot:</strong> Configure TFTP settings for booting kernel over network</li>
+                    <li><strong>Fast boot:</strong> Enable Falcon mode to reduce boot time by 1-2 seconds</li>
+                    <li><strong>Branding:</strong> Display company logo during boot process</li>
+                    <li><strong>Multi-boot:</strong> Configure different boot commands for various scenarios</li>
+                </ul>
+
+                <div class="resources-box" style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 0.75rem;">Resources</h3>
+                    <ul style="margin-left: 1.25rem;">
+                        <li><a href="https://docs.u-boot.org/en/latest/" target="_blank" rel="noopener">U-Boot Official Documentation →</a></li>
+                        <li><a href="https://software-dl.ti.com/processor-sdk-linux/esd/docs/latest/linux/Foundational_Components_U-Boot.html" target="_blank" rel="noopener">TI Processor SDK U-Boot Guide →</a></li>
+                        <li><a href="https://docs.u-boot.org/en/latest/board/ti/am62x_sk.html" target="_blank" rel="noopener">AM62x U-Boot Documentation →</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>TI Tools | U-Boot Toolkit</p>
+        </footer>
+    </div>
+
+    <script src="uboot-toolkit.js"></script>
+</body>
+</html>
