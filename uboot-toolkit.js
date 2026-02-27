@@ -41,6 +41,7 @@ function initializeElements() {
         bootcmd: document.getElementById('bootcmd'),
         bootargs: document.getElementById('bootargs'),
         fdtfile: document.getElementById('fdtfile'),
+        fdtoverlays: document.getElementById('fdtoverlays'),
         mmcdev: document.getElementById('mmcdev'),
         bootpart: document.getElementById('bootpart'),
         bootdir: document.getElementById('bootdir'),
@@ -95,7 +96,7 @@ function attachEventListeners() {
 
     // Update preview on any input change
     const inputs = [
-        elements.bootdelay, elements.bootcmd, elements.bootargs, elements.fdtfile,
+        elements.bootdelay, elements.bootcmd, elements.bootargs, elements.fdtfile, elements.fdtoverlays,
         elements.mmcdev, elements.bootpart, elements.bootdir,
         elements.ipaddr, elements.serverip, elements.netmask,
         elements.falconBootpart, elements.falconArgs
@@ -197,6 +198,9 @@ function generateUEnvPreview() {
     if (elements.fdtfile && elements.fdtfile.value) {
         config.push(`fdtfile=${elements.fdtfile.value}`);
     }
+    if (elements.fdtoverlays && elements.fdtoverlays.value) {
+        config.push(`fdtoverlays=${elements.fdtoverlays.value}`);
+    }
     config.push('');
 
     // Boot media
@@ -290,6 +294,15 @@ function generateExtlinuxPreview() {
         config.push(`    FDT ${bootdir}/dtb`);
     }
 
+    // FDTOVERLAYS (device tree overlays)
+    if (elements.fdtoverlays && elements.fdtoverlays.value) {
+        const overlays = elements.fdtoverlays.value.trim().split(/\s+/).map(overlay => {
+            // If overlay doesn't start with /, prepend bootdir
+            return overlay.startsWith('/') ? overlay : `${bootdir}/${overlay}`;
+        }).join(' ');
+        config.push(`    FDTOVERLAYS ${overlays}`);
+    }
+
     // Append (kernel arguments)
     if (elements.bootargs && elements.bootargs.value) {
         config.push(`    APPEND ${elements.bootargs.value}`);
@@ -306,6 +319,13 @@ function generateExtlinuxPreview() {
         config.push(`    LINUX ${bootdir}/Image`);
         if (elements.fdtfile && elements.fdtfile.value) {
             config.push(`    FDT ${bootdir}/${elements.fdtfile.value}`);
+        }
+        // Add overlays for Falcon mode too
+        if (elements.fdtoverlays && elements.fdtoverlays.value) {
+            const overlays = elements.fdtoverlays.value.trim().split(/\s+/).map(overlay => {
+                return overlay.startsWith('/') ? overlay : `${bootdir}/${overlay}`;
+            }).join(' ');
+            config.push(`    FDTOVERLAYS ${overlays}`);
         }
         if (elements.falconArgs && elements.falconArgs.value) {
             config.push(`    APPEND ${elements.falconArgs.value}`);

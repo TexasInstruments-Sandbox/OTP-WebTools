@@ -96,6 +96,12 @@
                         <input type="text" id="fdtfile" placeholder="ti/k3-am625-sk.dtb">
                         <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Path to device tree blob relative to /boot</p>
                     </div>
+
+                    <div class="input-group">
+                        <label for="fdtoverlays">Device Tree Overlays (Optional):</label>
+                        <textarea id="fdtoverlays" rows="2" placeholder="/overlays/overlay1.dtbo /overlays/overlay2.dtbo"></textarea>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #666;">Space-separated list of overlay files to apply (e.g., for capes, add-on boards, or custom hardware)</p>
+                    </div>
                 </div>
 
                 <div class="config-group" style="margin-top: 1.5rem;">
