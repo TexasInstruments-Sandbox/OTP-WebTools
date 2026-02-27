@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI Tools - Boot Mode Configuration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand-section">
+                <div class="nav-brand">TI Tools</div>
+                <div class="nav-tagline">Web-based utilities for TI MPU processors</div>
+            </a>
+            <div class="nav-links">
+                <a href="https://github.com/TexasInstruments"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://www.ti.com/design-development/software-design/open-source.html"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 0 2.04 4.327z"/>
+                    </svg>
+                    Open Source @ TI
+                </a>
+                <a href="https://www.ti.com/product-category/microcontrollers-processors/overview.html"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>TI Tools</h1>
+            <p class="subtitle">Boot Mode Configuration for AM62x</p>
+            <div class="header-links">
+                <a href="index.html" class="doc-link">
+                    ← Back to Tools
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="info-section">
+                <div class="experimental-warning">
+                    <h3>📋 Boot Mode Configuration Helper</h3>
+                    <p><strong>This tool helps you configure the boot mode settings for TI devices.</strong></p>
+                    <p>Select your device and desired boot configuration options, and the tool will generate the corresponding BOOT-MODE pin values and binary representation.</p>
+                </div>
+            </section>
+
+            <section class="input-section">
+                <h2>Device Selection</h2>
+                <div class="config-group">
+                    <label for="deviceSelect">Select Target Device:</label>
+                    <select id="deviceSelect">
+                        <option value="am62x">AM62x (AM625, AM623, AM621)</option>
+                        <option value="am62ax" disabled>AM62Ax (Coming Soon)</option>
+                        <option value="am64x" disabled>AM64x (Coming Soon)</option>
+                        <option value="am62px" disabled>AM62Px (Coming Soon)</option>
+                    </select>
+                    <p class="info-text" id="deviceInfo">AM62x SK Evaluation Modules - Reference: SPRUJ40E</p>
+                    <div id="deviceDocLink" style="margin-top: 1rem;">
+                        <a href="https://www.ti.com/lit/ug/spruj40e/spruj40e.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="doc-link">
+                            AM62x EVM User Guide (SPRUJ40E) →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Boot Mode Pin Mapping Reference</h2>
+                <p class="section-description">
+                    The BOOT-MODE pins configure the boot behavior of TI devices. The 16-bit configuration
+                    is divided into several fields that control different aspects of the boot process.
+                </p>
+
+                <div class="config-group">
+                    <h3>Bit Field Breakdown</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">Bit 15</th>
+                                    <th style="text-align: center; border-right: 3px solid #333;">Bit 14</th>
+                                    <th style="text-align: center; border-right: 3px solid #333;">Bit 13</th>
+                                    <th style="text-align: center;">Bit 12</th>
+                                    <th style="text-align: center;">Bit 11</th>
+                                    <th style="text-align: center; border-right: 3px solid #333;">Bit 10</th>
+                                    <th style="text-align: center;">Bit 9</th>
+                                    <th style="text-align: center;">Bit 8</th>
+                                    <th style="text-align: center; border-right: 3px solid #333;">Bit 7</th>
+                                    <th style="text-align: center;">Bit 6</th>
+                                    <th style="text-align: center;">Bit 5</th>
+                                    <th style="text-align: center;">Bit 4</th>
+                                    <th style="text-align: center; border-right: 3px solid #333;">Bit 3</th>
+                                    <th style="text-align: center;">Bit 2</th>
+                                    <th style="text-align: center;">Bit 1</th>
+                                    <th style="text-align: center;">Bit 0</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" style="background: #EEEEEE; text-align: center; font-weight: 600; border: 1px solid var(--border-color); border-right: 3px solid #333;">Reserved</td>
+                                    <td style="background: #E1BEE7; text-align: center; font-weight: 600; border: 1px solid var(--border-color); border-right: 3px solid #333;">Backup<br>Media<br>Config</td>
+                                    <td colspan="3" style="background: #FFE0B2; text-align: center; font-weight: 600; border: 1px solid var(--border-color); border-right: 3px solid #333;">Backup Boot Mode</td>
+                                    <td colspan="3" style="background: #B3E5FC; text-align: center; font-weight: 600; border: 1px solid var(--border-color); border-right: 3px solid #333;">Primary Boot<br>Media Config</td>
+                                    <td colspan="4" style="background: #C5E1A5; text-align: center; font-weight: 600; border: 1px solid var(--border-color); border-right: 3px solid #333;">Primary Boot Mode</td>
+                                    <td colspan="3" style="background: #FFF9C4; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">PLL Config</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <h3>Field Descriptions</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bits</th>
+                                    <th>Field</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[15:14]</td>
+                                    <td>Reserved</td>
+                                    <td>Reserved bits (set to 00)</td>
+                                </tr>
+                                <tr>
+                                    <td>[13]</td>
+                                    <td>Backup Boot Media Config</td>
+                                    <td>Configuration for backup boot device</td>
+                                </tr>
+                                <tr>
+                                    <td>[12:10]</td>
+                                    <td>Backup Boot Mode</td>
+                                    <td>Selects backup boot device if primary fails</td>
+                                </tr>
+                                <tr>
+                                    <td>[9:7]</td>
+                                    <td>Primary Boot Media Config</td>
+                                    <td>Additional configuration for primary boot device</td>
+                                </tr>
+                                <tr>
+                                    <td>[6:3]</td>
+                                    <td>Primary Boot Device</td>
+                                    <td>Selects the primary boot device/peripheral</td>
+                                </tr>
+                                <tr>
+                                    <td>[2:0]</td>
+                                    <td>PLL Configuration</td>
+                                    <td>System clock frequency for PLL configuration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section" id="configSummarySection" style="display: none;">
+                <h2>Current Configuration Summary</h2>
+                <div class="config-summary-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Configuration</th>
+                                <th>Value</th>
+                                <th>Bit Field</th>
+                            </tr>
+                        </thead>
+                        <tbody id="configSummaryBody">
+                            <tr>
+                                <td><strong>Device</strong></td>
+                                <td id="summaryDevice">-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PLL Reference Clock</strong></td>
+                                <td id="summaryPLL">-</td>
+                                <td><code id="summaryPLLBits">-</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Boot Device</strong></td>
+                                <td id="summaryPrimaryBoot">-</td>
+                                <td><code id="summaryPrimaryBootBits">-</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Media Config</strong></td>
+                                <td id="summaryPrimaryMedia">-</td>
+                                <td><code id="summaryPrimaryMediaBits">-</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backup Boot Device</strong></td>
+                                <td id="summaryBackupBoot">-</td>
+                                <td><code id="summaryBackupBootBits">-</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backup Media Config</strong></td>
+                                <td id="summaryBackupMedia">-</td>
+                                <td><code id="summaryBackupMediaBits">-</code></td>
+                            </tr>
+                            <tr style="background: var(--ti-grey-light); font-weight: 600;">
+                                <td><strong>BOOT-MODE Value</strong></td>
+                                <td colspan="2">
+                                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                        <span>Binary: <code id="summaryBinary" style="color: var(--ti-red); font-size: 1.1em;">-</code></span>
+                                        <span>Hex: <code id="summaryHex" style="color: var(--ti-red); font-size: 1.1em;">-</code></span>
+                                        <span>Dec: <code id="summaryDecimal" style="color: var(--ti-red); font-size: 1.1em;">-</code></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="input-section">
+                <h2>Configuration Options</h2>
+
+                <div class="config-group">
+                    <h3>PLL Reference Clock (BOOT-MODE [2:0])</h3>
+                    <label for="pllClock">Select PLL Reference Clock Frequency:</label>
+                    <select id="pllClock">
+                        <option value="011">25 MHz (Default)</option>
+                        <option value="010">24 MHz</option>
+                        <option value="100">26 MHz</option>
+                    </select>
+                </div>
+
+                <div class="config-group">
+                    <h3>Primary Boot Device (BOOT-MODE [6:3])</h3>
+                    <label for="primaryBoot">Select Primary Boot Device:</label>
+                    <select id="primaryBoot">
+                        <option value="0000">Serial NAND</option>
+                        <option value="0001">OSPI</option>
+                        <option value="0010">QSPI</option>
+                        <option value="0011">SPI</option>
+                        <option value="0100">Ethernet RGMII1</option>
+                        <option value="0101">Ethernet RMII1</option>
+                        <option value="0110">I2C</option>
+                        <option value="0111">UART</option>
+                        <option value="1000">MMC/SD card</option>
+                        <option value="1001">eMMC</option>
+                        <option value="1010">USB0</option>
+                        <option value="1011">GPMC NAND</option>
+                        <option value="1100">GPMC NOR</option>
+                        <option value="1110">xSPI</option>
+                        <option value="1111">No boot/Dev Boot</option>
+                    </select>
+                </div>
+
+                <div class="config-group">
+                    <h3>Primary Boot Media Configuration (BOOT-MODE [9:7])</h3>
+                    <p class="info-text">Configuration options depend on selected primary boot device</p>
+                    <div id="primaryMediaConfig">
+                        <!-- Dynamically populated based on primary boot selection -->
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <h3>Backup Boot Device (BOOT-MODE [12:10])</h3>
+                    <label for="backupBoot">Select Backup Boot Device:</label>
+                    <select id="backupBoot">
+                        <option value="000">None (No backup mode)</option>
+                        <option value="001">USB</option>
+                        <option value="011">UART</option>
+                        <option value="100">Ethernet</option>
+                        <option value="101">MMC/SD</option>
+                        <option value="110">SPI</option>
+                        <option value="111">I2C</option>
+                    </select>
+                </div>
+
+                <div class="config-group">
+                    <h3>Backup Boot Media Configuration (BOOT-MODE [13])</h3>
+                    <p class="info-text">Configuration option depends on selected backup boot device</p>
+                    <div id="backupMediaConfig">
+                        <!-- Dynamically populated based on backup boot selection -->
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn">Generate Configuration</button>
+                    <button id="clearBtn" class="secondary">Clear</button>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Detailed Boot Mode Configuration</h2>
+                <div id="resultsContainer"></div>
+            </section>
+
+            <section class="info-section">
+                <h2>Common Boot Configurations</h2>
+                <div class="config-group">
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>SD Card Boot:</strong> Primary Boot Device = MMC/SD card, PLL = 25 MHz</li>
+                        <li><strong>eMMC Boot:</strong> Primary Boot Device = eMMC, PLL = 25 MHz</li>
+                        <li><strong>OSPI Boot:</strong> Primary Boot Device = OSPI, configure read mode and chip select</li>
+                        <li><strong>Ethernet Boot:</strong> Primary Boot Device = Ethernet RGMII1/RMII1</li>
+                        <li><strong>USB Boot:</strong> Primary Boot Device = USB0, with backup options</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>TI Tools | Boot Mode Configuration for AM62x</p>
+        </footer>
+    </div>
+
+    <script src="bootmode.js"></script>
+</body>
+</html>
