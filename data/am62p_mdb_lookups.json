@@ -1,0 +1,3075 @@
+{
+  "ABJSTBL5_vdd_dyn_on": {
+    "lookup_string": "ABJSTBL5_vdd_dyn_on",
+    "cell_name": "ABJSTBL5",
+    "attribute": "vdd_dyn",
+    "mode": "on",
+    "value": 0.08
+  },
+  "ABJSTBL5_vdd_lkg_on": {
+    "lookup_string": "ABJSTBL5_vdd_lkg",
+    "cell_name": "ABJSTBL5",
+    "attribute": "vdd_lkg",
+    "mode": "on",
+    "value": 0.08
+  },
+  "ABJSTBL5_vddh1_dyn_on": {
+    "lookup_string": "ABJSTBL5_vddh1_dyn_on",
+    "cell_name": "ABJSTBL5",
+    "attribute": "vddh1_dyn",
+    "mode": "on",
+    "value": 0.600002717
+  },
+  "ABJSTBL5_vddh1_lkg_on": {
+    "lookup_string": "ABJSTBL5_vddh1_lkg",
+    "cell_name": "ABJSTBL5",
+    "attribute": "vddh1_lkg",
+    "mode": "on",
+    "value": 0.120000543
+  },
+  "canfd_vdd_dyn_12mbs_1p8v": {
+    "lookup_string": "canfd_vdd_dyn_12mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "12mbs_1p8v",
+    "value": 6.50676e-07
+  },
+  "canfd_vdd_dyn_12mbs_3p3v": {
+    "lookup_string": "canfd_vdd_dyn_12mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "12mbs_3p3v",
+    "value": 6.50676e-07
+  },
+  "canfd_vdd_dyn_1mbs_1p8v": {
+    "lookup_string": "canfd_vdd_dyn_1mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "1mbs_1p8v",
+    "value": 5.4223e-08
+  },
+  "canfd_vdd_dyn_1mbs_3p3v": {
+    "lookup_string": "canfd_vdd_dyn_1mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "1mbs_3p3v",
+    "value": 5.4223e-08
+  },
+  "canfd_vdd_dyn_250kbs_1p8v": {
+    "lookup_string": "canfd_vdd_dyn_250kbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "250kbs_1p8v",
+    "value": 1.35557e-08
+  },
+  "canfd_vdd_dyn_250kbs_3p3v": {
+    "lookup_string": "canfd_vdd_dyn_250kbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "250kbs_3p3v",
+    "value": 1.35557e-08
+  },
+  "canfd_vdd_dyn_5mbs_1p8v": {
+    "lookup_string": "canfd_vdd_dyn_5mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "5mbs_1p8v",
+    "value": 2.71115e-07
+  },
+  "canfd_vdd_dyn_5mbs_3p3v": {
+    "lookup_string": "canfd_vdd_dyn_5mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "5mbs_3p3v",
+    "value": 2.71115e-07
+  },
+  "canfd_vdd_dyn_8mbs_1p8v": {
+    "lookup_string": "canfd_vdd_dyn_8mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "8mbs_1p8v",
+    "value": 4.33784e-07
+  },
+  "canfd_vdd_dyn_8mbs_3p3v": {
+    "lookup_string": "canfd_vdd_dyn_8mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "8mbs_3p3v",
+    "value": 4.33784e-07
+  },
+  "canfd_vdd_dyn_off": {
+    "lookup_string": "canfd_vdd_dyn_off",
+    "cell_name": "canfd",
+    "attribute": "vdd_dyn",
+    "mode": "off",
+    "value": 0.0
+  },
+  "canfd_vddh1_dyn_12mbs_1p8v": {
+    "lookup_string": "canfd_vddh1_dyn_12mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vddh1_dyn",
+    "mode": "12mbs_1p8v",
+    "value": 0.1522152
+  },
+  "canfd_vddh1_dyn_1mbs_1p8v": {
+    "lookup_string": "canfd_vddh1_dyn_1mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vddh1_dyn",
+    "mode": "1mbs_1p8v",
+    "value": 0.0126846
+  },
+  "canfd_vddh1_dyn_1mbs_8p8v": {
+    "lookup_string": "canfd_vddh1_dyn_1mbs_8p8v",
+    "cell_name": "canfd",
+    "attribute": "vddh1_dyn",
+    "mode": "1mbs_8p8v",
+    "value": 0.1014768
+  },
+  "canfd_vddh1_dyn_250kbs_1p8v": {
+    "lookup_string": "canfd_vddh1_dyn_250kbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vddh1_dyn",
+    "mode": "250kbs_1p8v",
+    "value": 0.00317115
+  },
+  "canfd_vddh1_dyn_5mbs_1p8v": {
+    "lookup_string": "canfd_vddh1_dyn_5mbs_1p8v",
+    "cell_name": "canfd",
+    "attribute": "vddh1_dyn",
+    "mode": "5mbs_1p8v",
+    "value": 0.063423
+  },
+  "canfd_vddh1_dyn_off": {
+    "lookup_string": "canfd_vddh1_dyn_off",
+    "cell_name": "canfd",
+    "attribute": "vddh1_dyn",
+    "mode": "off",
+    "value": 0.0
+  },
+  "canfd_vddh2_dyn_12mbs_3p3v": {
+    "lookup_string": "canfd_vddh2_dyn_12mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vddh2_dyn",
+    "mode": "12mbs_3p3v",
+    "value": 0.78408
+  },
+  "canfd_vddh2_dyn_1mbs_3p3v": {
+    "lookup_string": "canfd_vddh2_dyn_1mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vddh2_dyn",
+    "mode": "1mbs_3p3v",
+    "value": 0.06534
+  },
+  "canfd_vddh2_dyn_250kbs_3p3v": {
+    "lookup_string": "canfd_vddh2_dyn_250kbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vddh2_dyn",
+    "mode": "250kbs_3p3v",
+    "value": 0.016335
+  },
+  "canfd_vddh2_dyn_5mbs_3p3v": {
+    "lookup_string": "canfd_vddh2_dyn_5mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vddh2_dyn",
+    "mode": "5mbs_3p3v",
+    "value": 0.3267
+  },
+  "canfd_vddh2_dyn_8mbs_3p3v": {
+    "lookup_string": "canfd_vddh2_dyn_8mbs_3p3v",
+    "cell_name": "canfd",
+    "attribute": "vddh2_dyn",
+    "mode": "8mbs_3p3v",
+    "value": 0.52272
+  },
+  "canfd_vddh2_dyn_off": {
+    "lookup_string": "canfd_vddh2_dyn_off",
+    "cell_name": "canfd",
+    "attribute": "vddh2_dyn",
+    "mode": "off",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1067_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1067_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1067_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1067_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1067_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1067_32_read",
+    "value": 36.768153125
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1067_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1067_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1067_32_write",
+    "value": 43.416896875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1333_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1333_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1333_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1333_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1333_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1333_32_read",
+    "value": 45.934346875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1333_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1333_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1333_32_write",
+    "value": 54.24060312500001
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1600_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1600_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1600_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1600_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1600_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1600_32_read",
+    "value": 55.135
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1600_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1600_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1600_32_write",
+    "value": 65.105
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1867_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1867_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1867_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1867_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1867_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1867_32_read",
+    "value": 64.335653125
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_1867_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_1867_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_1867_32_write",
+    "value": 75.969396875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2133_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2133_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2133_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2133_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2133_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2133_32_read",
+    "value": 73.501846875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2133_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2133_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2133_32_write",
+    "value": 86.793103125
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2400_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2400_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2400_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2400_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2400_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2400_32_read",
+    "value": 82.7025
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2400_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2400_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2400_32_write",
+    "value": 97.6575
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2667_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2667_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2667_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2667_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2667_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2667_32_read",
+    "value": 91.90315312499999
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2667_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2667_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2667_32_write",
+    "value": 108.521896875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2933_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2933_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2933_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2933_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2933_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2933_32_read",
+    "value": 101.069346875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_2933_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_2933_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_2933_32_write",
+    "value": 119.34560312500001
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3200_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3200_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3200_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3200_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3200_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3200_32_read",
+    "value": 110.27
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3200_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3200_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3200_32_write",
+    "value": 130.21
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3467_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3467_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3467_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3467_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3467_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3467_32_read",
+    "value": 119.47065312499998
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3467_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3467_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3467_32_write",
+    "value": 141.074396875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3733_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3733_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3733_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3733_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3733_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3733_32_read",
+    "value": 128.636846875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_3733_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_3733_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_3733_32_write",
+    "value": 151.898103125
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_533_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_533_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_533_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_533_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_533_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_533_32_read",
+    "value": 18.366846875
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_533_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_533_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_533_32_write",
+    "value": 21.688103125
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_800_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_800_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_800_32_idle",
+    "value": 2.314
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_800_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_800_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_800_32_read",
+    "value": 27.5675
+  },
+  "ddr32_3733_ios_vdd_dyn_ddr4_800_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_ddr4_800_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "ddr4_800_32_write",
+    "value": 32.5525
+  },
+  "ddr32_3733_ios_vdd_dyn_deep_sleep": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_deep_sleep",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "deep_sleep",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_100_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_100_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_100_32_idle",
+    "value": 2.5400482185909454
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_100_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_100_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_100_32_read",
+    "value": 2.2740423252076076
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_100_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_100_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_100_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1067_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1067_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1067_32_idle",
+    "value": 27.102314492365387
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1067_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1067_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1067_32_read",
+    "value": 24.264031609965176
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1067_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1067_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1067_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1333_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1333_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1333_32_idle",
+    "value": 33.85884275381731
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1333_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1333_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1333_32_read",
+    "value": 30.31298419501741
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1333_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1333_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1333_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1600_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1600_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1600_32_idle",
+    "value": 40.64077149745513
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1600_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1600_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1600_32_read",
+    "value": 36.38467720332172
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1600_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1600_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1600_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1867_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1867_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1867_32_idle",
+    "value": 47.42270024109295
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1867_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1867_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1867_32_read",
+    "value": 42.45637021162604
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_1867_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_1867_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_1867_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2133_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2133_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2133_32_idle",
+    "value": 54.179228502544866
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2133_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2133_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2133_32_read",
+    "value": 48.50532279667827
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2133_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2133_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2133_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2400_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2400_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2400_32_idle",
+    "value": 60.96115724618269
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2400_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2400_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2400_32_read",
+    "value": 54.57701580498259
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2400_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2400_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2400_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2667_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2667_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2667_32_idle",
+    "value": 67.74308598982051
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2667_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2667_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2667_32_read",
+    "value": 60.6487088132869
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2667_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2667_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2667_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2933_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2933_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2933_32_idle",
+    "value": 74.49961425127243
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2933_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2933_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2933_32_read",
+    "value": 66.69766139833914
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_2933_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_2933_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_2933_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3200_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3200_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3200_32_idle",
+    "value": 81.28154299491025
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3200_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3200_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3200_32_read",
+    "value": 72.76935440664344
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3200_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3200_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3200_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3467_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3467_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3467_32_idle",
+    "value": 88.06347173854809
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3467_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3467_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3467_32_read",
+    "value": 78.84104741494777
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3467_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3467_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3467_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3733_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3733_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3733_32_idle",
+    "value": 94.82
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3733_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3733_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3733_32_read",
+    "value": 84.89
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_3733_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_3733_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_3733_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_4000_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_4000_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_4000_32_idle",
+    "value": 101.60192874363783
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_4000_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_4000_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_4000_32_read",
+    "value": 90.96169300830431
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_4000_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_4000_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_4000_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_4267_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_4267_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_4267_32_idle",
+    "value": 108.38385748727563
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_4267_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_4267_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_4267_32_read",
+    "value": 97.03338601660863
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_4267_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_4267_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_4267_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_50_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_50_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_50_32_idle",
+    "value": 1.2700241092954727
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_50_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_50_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_50_32_read",
+    "value": 1.1370211626038038
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_50_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_50_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_50_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_533_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_533_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_533_32_idle",
+    "value": 13.53845700508974
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_533_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_533_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_533_32_read",
+    "value": 12.120645593356551
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_533_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_533_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_533_32_write",
+    "value": 1.31
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_800_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_800_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_800_32_idle",
+    "value": 20.320385748727563
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_800_32_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_800_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_800_32_read",
+    "value": 18.19233860166086
+  },
+  "ddr32_3733_ios_vdd_dyn_lpddr4_800_32_write": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_lpddr4_800_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "lpddr4_800_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vdd_dyn_sleep_idle": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_sleep_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "sleep_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vdd_dyn_sleep_read": {
+    "lookup_string": "ddr32_3733_ios_vdd_dyn_sleep_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_dyn",
+    "mode": "sleep_read",
+    "value": 0.5
+  },
+  "ddr32_3733_ios_vdd_lkg_": {
+    "lookup_string": "ddr32_3733_ios_vdd_lkg",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vdd_lkg",
+    "mode": "",
+    "value": 12.46
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1067_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1067_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1067_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1067_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1067_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1067_32_read",
+    "value": 72.134
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1067_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1067_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1067_32_write",
+    "value": 287.742
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1333_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1333_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1333_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1333_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1333_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1333_32_read",
+    "value": 72.666
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1333_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1333_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1333_32_write",
+    "value": 294.658
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1600_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1600_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1600_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1600_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1600_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1600_32_read",
+    "value": 73.2
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1600_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1600_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1600_32_write",
+    "value": 301.6
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1867_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1867_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1867_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1867_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1867_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1867_32_read",
+    "value": 73.732
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_1867_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_1867_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_1867_32_write",
+    "value": 308.516
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2133_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2133_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2133_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2133_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2133_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2133_32_read",
+    "value": 74.266
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2133_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2133_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2133_32_write",
+    "value": 315.458
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2400_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2400_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2400_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2400_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2400_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2400_32_read",
+    "value": 74.8
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2400_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2400_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2400_32_write",
+    "value": 322.4
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2667_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2667_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2667_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2667_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2667_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2667_32_read",
+    "value": 75.334
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2667_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2667_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2667_32_write",
+    "value": 329.342
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2933_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2933_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2933_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2933_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2933_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2933_32_read",
+    "value": 75.866
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_2933_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_2933_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_2933_32_write",
+    "value": 336.258
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3200_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3200_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3200_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3200_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3200_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3200_32_read",
+    "value": 76.4
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3200_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3200_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3200_32_write",
+    "value": 343.2
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3467_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3467_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3467_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3467_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3467_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3467_32_read",
+    "value": 76.934
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3467_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3467_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3467_32_write",
+    "value": 350.142
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3733_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3733_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3733_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3733_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3733_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3733_32_read",
+    "value": 77.466
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_3733_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_3733_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_3733_32_write",
+    "value": 357.058
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_533_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_533_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_533_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_533_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_533_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_533_32_read",
+    "value": 71.066
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_533_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_533_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_533_32_write",
+    "value": 273.858
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_800_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_800_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_800_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_800_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_800_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_800_32_read",
+    "value": 71.6
+  },
+  "ddr32_3733_ios_vddh1_dyn_ddr4_800_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_ddr4_800_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "ddr4_800_32_write",
+    "value": 280.8
+  },
+  "ddr32_3733_ios_vddh1_dyn_deep_sleep": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_deep_sleep",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "deep_sleep",
+    "value": 0.417
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_100_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_100_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_100_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_100_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_100_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_100_32_read",
+    "value": 70.2
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_100_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_100_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_100_32_write",
+    "value": 262.6
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1067_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1067_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1067_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1067_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1067_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1067_32_read",
+    "value": 72.134
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1067_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1067_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1067_32_write",
+    "value": 287.742
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1333_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1333_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1333_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1333_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1333_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1333_32_read",
+    "value": 72.666
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1333_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1333_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1333_32_write",
+    "value": 294.658
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1600_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1600_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1600_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1600_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1600_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1600_32_read",
+    "value": 73.2
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1600_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1600_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1600_32_write",
+    "value": 301.6
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1867_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1867_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1867_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1867_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1867_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1867_32_read",
+    "value": 73.732
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_1867_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_1867_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_1867_32_write",
+    "value": 308.516
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2133_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2133_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2133_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2133_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2133_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2133_32_read",
+    "value": 74.266
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2133_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2133_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2133_32_write",
+    "value": 315.458
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2400_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2400_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2400_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2400_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2400_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2400_32_read",
+    "value": 74.8
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2400_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2400_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2400_32_write",
+    "value": 322.4
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2667_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2667_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2667_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2667_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2667_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2667_32_read",
+    "value": 75.334
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2667_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2667_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2667_32_write",
+    "value": 329.342
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2933_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2933_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2933_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2933_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2933_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2933_32_read",
+    "value": 75.866
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_2933_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_2933_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_2933_32_write",
+    "value": 336.258
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3200_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3200_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3200_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3200_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3200_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3200_32_read",
+    "value": 76.4
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3200_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3200_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3200_32_write",
+    "value": 343.2
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3467_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3467_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3467_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3467_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3467_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3467_32_read",
+    "value": 76.934
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3467_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3467_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3467_32_write",
+    "value": 350.142
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3733_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3733_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3733_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3733_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3733_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3733_32_read",
+    "value": 77.466
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_3733_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_3733_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_3733_32_write",
+    "value": 357.058
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_4000_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_4000_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_4000_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_4000_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_4000_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_4000_32_read",
+    "value": 78.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_4000_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_4000_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_4000_32_write",
+    "value": 364.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_4267_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_4267_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_4267_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_4267_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_4267_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_4267_32_read",
+    "value": 78.534
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_4267_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_4267_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_4267_32_write",
+    "value": 370.942
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_50_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_50_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_50_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_50_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_50_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_50_32_read",
+    "value": 70.1
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_50_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_50_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_50_32_write",
+    "value": 261.3
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_533_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_533_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_533_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_533_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_533_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_533_32_read",
+    "value": 71.066
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_533_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_533_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_533_32_write",
+    "value": 273.858
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_800_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_800_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_800_32_idle",
+    "value": 33.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_800_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_800_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_800_32_read",
+    "value": 71.6
+  },
+  "ddr32_3733_ios_vddh1_dyn_lpddr4_800_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_lpddr4_800_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "lpddr4_800_32_write",
+    "value": 280.8
+  },
+  "ddr32_3733_ios_vddh1_dyn_sleep_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_sleep_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "sleep_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_sleep_read": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_sleep_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "sleep_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh1_dyn_sleep_write": {
+    "lookup_string": "ddr32_3733_ios_vddh1_dyn_sleep_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_dyn",
+    "mode": "sleep_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh1_lkg_": {
+    "lookup_string": "ddr32_3733_ios_vddh1_lkg",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh1_lkg",
+    "mode": "",
+    "value": 108.82
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1067_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1067_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1067_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1067_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1067_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1067_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1067_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1067_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1067_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1333_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1333_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1333_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1333_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1333_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1333_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1333_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1333_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1333_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1600_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1600_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1600_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1600_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1600_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1600_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1600_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1600_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1600_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1867_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1867_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1867_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1867_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1867_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1867_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_1867_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_1867_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_1867_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2133_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2133_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2133_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2133_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2133_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2133_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2133_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2133_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2133_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2400_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2400_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2400_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2400_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2400_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2400_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2400_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2400_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2400_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2667_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2667_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2667_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2667_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2667_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2667_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2667_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2667_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2667_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2933_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2933_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2933_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2933_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2933_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2933_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_2933_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_2933_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_2933_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3200_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3200_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3200_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3200_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3200_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3200_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3200_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3200_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3200_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3467_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3467_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3467_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3467_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3467_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3467_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3467_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3467_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3467_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3733_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3733_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3733_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3733_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3733_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3733_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_3733_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_3733_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_3733_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_533_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_533_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_533_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_533_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_533_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_533_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_533_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_533_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_533_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_800_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_800_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_800_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_800_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_800_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_800_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_ddr4_800_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_ddr4_800_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "ddr4_800_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_deep_sleep": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_deep_sleep",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "deep_sleep",
+    "value": 0.417
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_100_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_100_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_100_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_100_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_100_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_100_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_100_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_100_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_100_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1067_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1067_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1067_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1067_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1067_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1067_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1067_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1067_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1067_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1333_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1333_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1333_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1333_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1333_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1333_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1333_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1333_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1333_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1600_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1600_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1600_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1600_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1600_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1600_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1600_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1600_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1600_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1867_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1867_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1867_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1867_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1867_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1867_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_1867_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_1867_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_1867_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2133_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2133_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2133_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2133_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2133_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2133_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2133_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2133_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2133_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2400_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2400_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2400_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2400_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2400_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2400_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2400_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2400_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2400_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2667_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2667_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2667_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2667_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2667_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2667_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2667_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2667_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2667_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2933_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2933_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2933_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2933_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2933_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2933_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_2933_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_2933_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_2933_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3200_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3200_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3200_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3200_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3200_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3200_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3200_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3200_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3200_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3467_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3467_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3467_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3467_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3467_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3467_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3467_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3467_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3467_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3733_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3733_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3733_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3733_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3733_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3733_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_3733_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_3733_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_3733_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_4000_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_4000_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_4000_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_4000_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_4000_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_4000_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_4000_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_4000_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_4000_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_4267_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_4267_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_4267_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_4267_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_4267_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_4267_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_4267_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_4267_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_4267_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_50_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_50_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_50_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_50_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_50_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_50_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_50_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_50_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_50_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_533_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_533_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_533_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_533_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_533_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_533_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_533_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_533_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_533_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_800_32_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_800_32_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_800_32_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_800_32_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_800_32_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_800_32_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_lpddr4_800_32_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_lpddr4_800_32_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "lpddr4_800_32_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_sleep_idle": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_sleep_idle",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "sleep_idle",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_sleep_read": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_sleep_read",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "sleep_read",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_dyn_sleep_write": {
+    "lookup_string": "ddr32_3733_ios_vddh2_dyn_sleep_write",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_dyn",
+    "mode": "sleep_write",
+    "value": 0.0
+  },
+  "ddr32_3733_ios_vddh2_lkg_": {
+    "lookup_string": "ddr32_3733_ios_vddh2_lkg",
+    "cell_name": "ddr32_3733_ios",
+    "attribute": "vddh2_lkg",
+    "mode": "",
+    "value": 0.0
+  },
+  "ddr32_3733_phy_vdd_dyn_idle_": {
+    "lookup_string": "ddr32_3733_phy_vdd_dyn_idle",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vdd_dyn_idle",
+    "mode": "",
+    "value": 0.11
+  },
+  "ddr32_3733_phy_vdd_dyn_int_trk_": {
+    "lookup_string": "ddr32_3733_phy_vdd_dyn_int_trk",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vdd_dyn_int_trk",
+    "mode": "",
+    "value": 281.0
+  },
+  "ddr32_3733_phy_vdd_dyn_max_": {
+    "lookup_string": "ddr32_3733_phy_vdd_dyn_max",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vdd_dyn_max",
+    "mode": "",
+    "value": 0.95
+  },
+  "ddr32_3733_phy_vdd_dyn_peak_": {
+    "lookup_string": "ddr32_3733_phy_vdd_dyn_peak",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vdd_dyn_peak",
+    "mode": "",
+    "value": 1.0
+  },
+  "ddr32_3733_phy_vdd_dyn_sw_trk_": {
+    "lookup_string": "ddr32_3733_phy_vdd_dyn_sw_trk",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vdd_dyn_sw_trk",
+    "mode": "",
+    "value": 281.0
+  },
+  "ddr32_3733_phy_vdd_lkg_": {
+    "lookup_string": "ddr32_3733_phy_vdd_lkg",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vdd_lkg",
+    "mode": "",
+    "value": 365.1
+  },
+  "ddr32_3733_phy_vddr_lkg_": {
+    "lookup_string": "ddr32_3733_phy_vddr_lkg",
+    "cell_name": "ddr32_3733_phy",
+    "attribute": "vddr_lkg",
+    "mode": "",
+    "value": 0.0
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_0": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_0",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "0",
+    "value": 0.0
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_100": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_100",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "100",
+    "value": 0.1408
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_1000": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_1000",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "1000",
+    "value": 1.408
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_200": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_200",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "200",
+    "value": 0.2816
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_25": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_25",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "25",
+    "value": 0.035
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_300": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_300",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "300",
+    "value": 0.4224
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_400": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_400",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "400",
+    "value": 0.5632
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_50": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_50",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "50",
+    "value": 0.07
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_500": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_500",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "500",
+    "value": 0.704
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_600": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_600",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "600",
+    "value": 0.8448
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_700": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_700",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "700",
+    "value": 0.9856
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_800": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_800",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "800",
+    "value": 1.1264
+  },
+  "DIVTS16FFC1TO128A_vdd_dyn_900": {
+    "lookup_string": "DIVTS16FFC1TO128A_vdd_dyn_900",
+    "cell_name": "DIVTS16FFC1TO128A",
+    "attribute": "vdd_dyn",
+    "mode": "900",
+    "value": 1.2672
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x30_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x30_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x30_fps_18b_|_1p8V",
+    "value": 5.08263e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x30_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x30_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x30_fps_18b_|_3p3V",
+    "value": 2.51886e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x30_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x30_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x30_fps_24b_|_1p8V",
+    "value": 2.51886e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x30_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x30_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x30_fps_24b_|_3p3V",
+    "value": 2.51886e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x60_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x60_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x60_fps_18b_|_1p8V",
+    "value": 2.51886e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x60_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x60_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x60_fps_18b_|_3p3V",
+    "value": 5.03772e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x60_fps_24b_|_1p8V",
+    "value": 5.03772e-05
+  },
+  "dpi_vdd_dyn_2K_|_2048x1080x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_2K_|_2048x1080x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "2K_|_2048x1080x60_fps_24b_|_3p3V",
+    "value": 5.03772e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_12b_|_1p8V",
+    "value": 3.28905e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_12b_|_3p3V",
+    "value": 2.37156e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_16b_|_1p8V",
+    "value": 2.37156e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_16b_|_3p3V",
+    "value": 2.37156e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_18b_|_1p8V",
+    "value": 2.37156e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_18b_|_3p3V",
+    "value": 2.54131e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_24b_|_1p8V",
+    "value": 2.54131e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x30_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x30_fps_24b_|_3p3V",
+    "value": 2.54131e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_12b_|_1p8V",
+    "value": 2.54131e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_12b_|_3p3V",
+    "value": 4.74312e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_16b_|_1p8V",
+    "value": 4.74312e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_16b_|_3p3V",
+    "value": 4.74312e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_18b_|_1p8V",
+    "value": 4.74312e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_18b_|_3p3V",
+    "value": 5.08263e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_24b_|_1p8V",
+    "value": 5.08263e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x1080x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x1080x60_fps_24b_|_3p3V",
+    "value": 5.08263e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_12b_|_1p8V",
+    "value": 4.73748e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_12b_|_3p3V",
+    "value": 1.53467e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_16b_|_1p8V",
+    "value": 1.53467e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_16b_|_3p3V",
+    "value": 1.53467e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_18b_|_1p8V",
+    "value": 1.53467e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_18b_|_3p3V",
+    "value": 1.64453e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_24b_|_1p8V",
+    "value": 1.64453e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x30_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x30_fps_24b_|_3p3V",
+    "value": 1.64453e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_12b_|_1p8V",
+    "value": 1.64453e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_12b_|_3p3V",
+    "value": 3.06935e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_16b_|_1p8V",
+    "value": 3.06935e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_16b_|_3p3V",
+    "value": 3.06935e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_18b_|_1p8V",
+    "value": 3.06935e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_18b_|_3p3V",
+    "value": 3.28905e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_24b_|_1p8V",
+    "value": 3.28905e-05
+  },
+  "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_Full_HD_|_1920x720x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "Full_HD_|_1920x720x60_fps_24b_|_3p3V",
+    "value": 3.28905e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x30_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x30_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x30_fps_12b_|_1p8V",
+    "value": 2.24104e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x30_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x30_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x30_fps_12b_|_3p3V",
+    "value": 1.02312e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x30_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x30_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x30_fps_16b_|_1p8V",
+    "value": 1.02312e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x30_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x30_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x30_fps_16b_|_3p3V",
+    "value": 1.02312e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x30_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x30_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x30_fps_24b_|_1p8V",
+    "value": 1.31605e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x30_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x30_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x30_fps_24b_|_3p3V",
+    "value": 1.31605e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x60_fps_12b_|_1p8V",
+    "value": 1.31605e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x60_fps_12b_|_3p3V",
+    "value": 2.04623e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x60_fps_16b_|_1p8V",
+    "value": 2.04623e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x60_fps_16b_|_3p3V",
+    "value": 2.04623e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x60_fps_24b_|_1p8V",
+    "value": 2.6321e-05
+  },
+  "dpi_vdd_dyn_HD_|_1280x720x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD_|_1280x720x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD_|_1280x720x60_fps_24b_|_3p3V",
+    "value": 2.6321e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_12b_|_1p8V",
+    "value": 3.57601e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_12b_|_3p3V",
+    "value": 1.62148e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_16b_|_1p8V",
+    "value": 1.62148e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_16b_|_3p3V",
+    "value": 1.62148e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_18b_|_1p8V",
+    "value": 1.62148e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_18b_|_3p3V",
+    "value": 1.73754e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_24b_|_1p8V",
+    "value": 1.73754e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x30_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x30_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x30_fps_24b_|_3p3V",
+    "value": 1.73754e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_12b_|_1p8V",
+    "value": 1.73754e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_12b_|_3p3V",
+    "value": 3.24296e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_16b_|_1p8V",
+    "value": 3.24296e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_16b_|_3p3V",
+    "value": 3.24296e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_18b_|_1p8V",
+    "value": 3.47508e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_18b_|_3p3V",
+    "value": 3.47508e-05
+  },
+  "dpi_vdd_dyn_HD+_|_1600x900x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_HD+_|_1600x900x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "HD+_|_1600x900x60_fps_24b_|_3p3V",
+    "value": 3.47508e-05
+  },
+  "dpi_vdd_dyn_off": {
+    "lookup_string": "dpi_vdd_dyn_off",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "off",
+    "value": 0.0
+  },
+  "dpi_vdd_dyn_SD_|_640x480x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SD_|_640x480x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SD_|_640x480x60_fps_12b_|_1p8V",
+    "value": 0.0
+  },
+  "dpi_vdd_dyn_SD_|_640x480x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SD_|_640x480x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SD_|_640x480x60_fps_12b_|_3p3V",
+    "value": 7.04668e-06
+  },
+  "dpi_vdd_dyn_SD_|_640x480x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SD_|_640x480x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SD_|_640x480x60_fps_16b_|_1p8V",
+    "value": 7.04668e-06
+  },
+  "dpi_vdd_dyn_SD_|_640x480x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SD_|_640x480x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SD_|_640x480x60_fps_16b_|_3p3V",
+    "value": 7.04668e-06
+  },
+  "dpi_vdd_dyn_SD_|_640x480x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SD_|_640x480x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SD_|_640x480x60_fps_24b_|_1p8V",
+    "value": 8.45878e-06
+  },
+  "dpi_vdd_dyn_SD_|_640x480x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SD_|_640x480x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SD_|_640x480x60_fps_24b_|_3p3V",
+    "value": 8.45878e-06
+  },
+  "dpi_vdd_dyn_SVGA_|_800x600x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SVGA_|_800x600x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SVGA_|_800x600x60_fps_12b_|_1p8V",
+    "value": 8.45878e-06
+  },
+  "dpi_vdd_dyn_SVGA_|_800x600x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SVGA_|_800x600x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SVGA_|_800x600x60_fps_12b_|_3p3V",
+    "value": 1.12566e-05
+  },
+  "dpi_vdd_dyn_SVGA_|_800x600x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SVGA_|_800x600x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SVGA_|_800x600x60_fps_16b_|_1p8V",
+    "value": 1.12566e-05
+  },
+  "dpi_vdd_dyn_SVGA_|_800x600x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SVGA_|_800x600x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SVGA_|_800x600x60_fps_16b_|_3p3V",
+    "value": 1.12566e-05
+  },
+  "dpi_vdd_dyn_SVGA_|_800x600x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SVGA_|_800x600x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SVGA_|_800x600x60_fps_24b_|_1p8V",
+    "value": 1.35124e-05
+  },
+  "dpi_vdd_dyn_SVGA_|_800x600x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SVGA_|_800x600x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SVGA_|_800x600x60_fps_24b_|_3p3V",
+    "value": 1.35124e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_12b_|_1p8V",
+    "value": 2.95228e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_12b_|_3p3V",
+    "value": 1.49592e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_16b_|_1p8V",
+    "value": 1.49592e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_16b_|_3p3V",
+    "value": 1.49592e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_18b_|_1p8V",
+    "value": 1.49592e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_18b_|_3p3V",
+    "value": 1.92422e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_24b_|_1p8V",
+    "value": 1.92422e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x30_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x30_fps_24b_|_3p3V",
+    "value": 1.92422e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_12b_|_1p8V",
+    "value": 1.92422e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_12b_|_3p3V",
+    "value": 2.99183e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_16b_|_1p8V",
+    "value": 2.99183e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_16b_|_3p3V",
+    "value": 2.99183e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_18b_|_1p8V",
+    "value": 2.99183e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_18b_|_3p3V",
+    "value": 3.84844e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_24b_|_1p8V",
+    "value": 3.84844e-05
+  },
+  "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA_|_1280x1024x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA_|_1280x1024x60_fps_24b_|_3p3V",
+    "value": 3.84844e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_12b_|_1p8V",
+    "value": 3.84844e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_12b_|_3p3V",
+    "value": 3.33714e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_16b_|_1p8V",
+    "value": 3.33714e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_16b_|_3p3V",
+    "value": 3.33714e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_18b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_18b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_18b_|_1p8V",
+    "value": 3.33714e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_18b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_18b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_18b_|_3p3V",
+    "value": 4.29261e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_24b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_24b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_24b_|_1p8V",
+    "value": 4.29261e-05
+  },
+  "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_24b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_SXGA+_|_1400x1050x60_fps_24b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "SXGA+_|_1400x1050x60_fps_24b_|_3p3V",
+    "value": 3.57601e-05
+  },
+  "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_12b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_12b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "UXGA_|_1600x1200x30_fps_12b_|_1p8V",
+    "value": 3.47508e-05
+  },
+  "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_12b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_12b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "UXGA_|_1600x1200x30_fps_12b_|_3p3V",
+    "value": 2.21051e-05
+  },
+  "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_16b_|_1p8V": {
+    "lookup_string": "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_16b_|_1p8V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "UXGA_|_1600x1200x30_fps_16b_|_1p8V",
+    "value": 2.21051e-05
+  },
+  "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_16b_|_3p3V": {
+    "lookup_string": "dpi_vdd_dyn_UXGA_|_1600x1200x30_fps_16b_|_3p3V",
+    "cell_name": "dpi",
+    "attribute": "vdd_dyn",
+    "mode": "UXGA_|_1600x1200x30_fps_16b_|_3p3V",
+    "value": 2.21051e-05
+  }
+}

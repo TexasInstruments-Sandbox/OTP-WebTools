@@ -203,56 +203,8 @@
                             <span>Operating Performance Point (OPP)</span>
                             <span>▼</span>
                         </div>
-                        <div class="dense-accordion-content open">
-                            <div class="dense-row two-col"><span class="dense-label">MPU A530/1/2/3</span>
-                                <select id="MPU_A530_1_2_3_Frequency" class="dense-input form-select dynamic-opp"
-                                    data-default="1250">
-                                    <option value="1400">1400 MHz</option>
-                                    <option value="1250" selected>1250 MHz</option>
-                                    <option value="1000">1000 MHz</option>
-                                    <option value="800">800 MHz</option>
-                                    <option value="250">250 MHz</option>
-                                </select>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">GPU</span>
-                                <select id="GPU_Frequency" class="dense-input form-select dynamic-opp" data-default="0">
-                                    <option value="800">800 MHz</option>
-                                    <option value="500">500 MHz</option>
-                                    <option value="250">250 MHz</option>
-                                    <option value="0" selected>0 MHz</option>
-                                </select>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">MCU M4F</span>
-                                <select id="MCU_M4F_Frequency" class="dense-input form-select dynamic-opp">
-                                    <option value="400" selected>400 MHz</option>
-                                    <option value="0">0 MHz</option>
-                                </select>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">PRU-SS</span>
-                                <select id="PRU_SS_Frequency" class="dense-input form-select dynamic-opp">
-                                    <option value="333" selected>333 MHz</option>
-                                    <option value="250">250 MHz</option>
-                                    <option value="200">200 MHz</option>
-                                    <option value="0">0 MHz</option>
-                                </select>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">HSM</span>
-                                <select id="HSM_Frequency" class="dense-input form-select dynamic-opp"
-                                    data-default="133">
-                                    <option value="400">400 MHz</option>
-                                    <option value="250">250 MHz</option>
-                                    <option value="133" selected>133 MHz</option>
-                                    <option value="0">0 MHz</option>
-                                </select>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">R5F</span>
-                                <select id="_R5F__Frequency" class="dense-input form-select dynamic-opp"
-                                    data-default="400">
-                                    <option value="800">800 MHz</option>
-                                    <option value="400" selected>400 MHz</option>
-                                    <option value="0">0 MHz</option>
-                                </select>
-                            </div>
+                        <div class="dense-accordion-content open" id="processor-frequency-container">
+                            <!-- Processor frequencies will be populated dynamically based on selected SoC -->
                         </div>
                     </div>
 
@@ -262,77 +214,8 @@
                             <span>Processor Core Utilization (%)</span>
                             <span>▼</span>
                         </div>
-                        <div class="dense-accordion-content">
-                            <div class="dense-row two-col"><span class="dense-label">MPU-A530</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="MPU_A530_Util_slider" min="0" max="100" value="100"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="MPU_A530_Util" class="dense-input form-number" value="100"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">MPU-A531</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="MPU_A531_Util_slider" min="0" max="100" value="1"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="MPU_A531_Util" class="dense-input form-number" value="1"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">MPU-A532</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="MPU_A532_Util_slider" min="0" max="100" value="1"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="MPU_A532_Util" class="dense-input form-number" value="1"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">MPU-A533</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="MPU_A533_Util_slider" min="0" max="100" value="1"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="MPU_A533_Util" class="dense-input form-number" value="1"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">GPU</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="GPU_Util_slider" min="0" max="100" value="0"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="GPU_Util" class="dense-input form-number" value="0"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">R5F</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="_R5F_Util_slider" min="0" max="100" value="1"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="_R5F_Util" class="dense-input form-number" value="1"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">MCU-M4F</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="MCU_M4F_Util_slider" min="0" max="100" value="1"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="MCU_M4F_Util" class="dense-input form-number" value="1"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">PRU-SS</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="PRU_SS_Util_slider" min="0" max="100" value="1"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="PRU_SS_Util" class="dense-input form-number" value="1"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">HSM</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="HSM_Util_slider" min="0" max="100" value="10"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="HSM_Util" class="dense-input form-number" value="10"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
-                            <div class="dense-row two-col"><span class="dense-label">Security Accel</span>
-                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
-                                        type="range" id="SEC_Util_slider" min="0" max="100" value="0"
-                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
-                                        id="SEC_Util" class="dense-input form-number" value="0"
-                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
-                            </div>
+                        <div class="dense-accordion-content" id="processor-utilization-container">
+                            <!-- Processor utilization inputs will be populated dynamically based on selected SoC -->
                         </div>
                     </div>
 
@@ -648,11 +531,23 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- AM62x Data -->
     <script src="data/am62x_dropdowns.js"></script>
     <script src="data/am62x_socdb.js"></script>
-    <script src="data/am62x_usecases.js"></script>
+    <!-- <script src="data/am62x_usecases.js"></script> -->
     <script src="data/am62x_pet_mapping.js"></script>
     <script src="data/am62x_power_data.js"></script>
+
+    <!-- AM62P Data -->
+    <script src="data/am62p_dropdowns.js"></script>
+    <script src="data/am62p_socdb.js"></script>
+    <!-- <script src="data/am62p_usecases.js"></script> -->
+    <script src="data/am62p_power_data.js"></script>
+
+    <!-- SoC Registry (must load after device data) -->
+    <script src="data/soc_registry.js"></script>
+
+    <!-- Application -->
     <script src="config-manager.js"></script>
     <script src="power-estimator.js"></script>
 

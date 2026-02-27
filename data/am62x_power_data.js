@@ -45,16 +45,6 @@ const AM62x_DATA = {
         { id: "VDDA_3P3", label: "VDDA_3P3", nom: 3.30 }
     ],
 
-    // Pre-defined use cases from Excel "Use Cases" sheet
-    useCases: [
-        { id: "idle", label: "Idle" },
-        { id: "100_percent", label: "100% (Max Utility)" },
-        { id: "uc1_1_dual", label: "UC 1.1 Dual" },
-        { id: "uc1_1_quad", label: "UC 1.1 Quad" },
-        { id: "uc1_6_quad", label: "UC 1.6 Quad" },
-        { id: "max_current_125c", label: "Max Current 125C" }
-    ],
-
     /**
      * MOCK CALCULATION FUNCTION
      * -------------------------

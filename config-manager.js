@@ -733,4 +733,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Expose so power-estimator.js can update the slot power after recalculation
-window.PET_ConfigManager = { renderSlots, activeSlotIndex: () => activeSlotIndex };
+window.PET_ConfigManager = { renderSlots, activeSlotIndex: () => activeSlotIndex, saveAllConfigs };

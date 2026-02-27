@@ -55,7 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populateControlPanelDropdowns() {
-        const dropdowns = window.TI_AM62X_DROPDOWNS || {};
+        // Get device-specific dropdowns based on active SoC
+        let dropdowns = {};
+        if (appState.activeSoc) {
+            const socId = appState.activeSoc.id;
+            if (socId === 'am62x') {
+                dropdowns = window.TI_AM62X_DROPDOWNS || {};
+            } else if (socId === 'am62p') {
+                dropdowns = window.TI_AM62P_DROPDOWNS || {};
+            }
+        } else {
+            // Fallback to AM62X dropdowns if no SoC is loaded
+            dropdowns = window.TI_AM62X_DROPDOWNS || {};
+        }
         const availableLists = Object.keys(dropdowns);
 
         // Find all UI selects that represent IP Modes
@@ -104,7 +116,203 @@ document.addEventListener('DOMContentLoaded', () => {
 
         appState.activeSoc = socData;
         window.calculatePower = socData.calculatePower; // Expose globally for config-manager.js
+
+        // Populate processor inputs dynamically based on SoCDB
+        populateProcessorInputs(socId);
+
+        // Repopulate dropdowns with device-specific options
+        populateControlPanelDropdowns();
+
         updateConfigFromUI();
+    }
+
+    function populateProcessorInputs(socId) {
+        // Get SoCDB for this device
+        let socdb = null;
+        if (socId === 'am62x' && window.TI_AM62X_SOCDB) {
+            socdb = window.TI_AM62X_SOCDB;
+        } else if (socId === 'am62p' && window.TI_AM62P_SOCDB) {
+            socdb = window.TI_AM62P_SOCDB;
+        }
+
+        if (!socdb) return;
+
+        // Extract processor components from SoCDB
+        const processors = [];
+        for (const [key, component] of Object.entries(socdb)) {
+            if (component.function && (
+                component.function.includes('ARM_MPU') ||
+                component.function.includes('ARM_MCU') ||
+                component.function === 'GPU' ||
+                component.function === 'DSP'
+            )) {
+                processors.push({
+                    key: key,
+                    name: component.physical_name || key,
+                    instance: component.instance_name || '',
+                    function: component.function,
+                    type: component.type
+                });
+            }
+        }
+
+        // Sort processors: ARM_MPU first, then ARM_MCU, then GPU, then others
+        processors.sort((a, b) => {
+            const order = { 'ARM_MPU': 0, 'ARM_MCU': 1, 'GPU': 2, 'DSP': 3 };
+            const aOrder = order[a.function] !== undefined ? order[a.function] : 4;
+            const bOrder = order[b.function] !== undefined ? order[b.function] : 4;
+            if (aOrder !== bOrder) return aOrder - bOrder;
+            return a.key.localeCompare(b.key);
+        });
+
+        // Populate frequency container
+        const freqContainer = document.getElementById('processor-frequency-container');
+        if (freqContainer) {
+            freqContainer.innerHTML = '';
+
+            // Group A53 cores together - they share the same frequency
+            const a53Cores = processors.filter(p => p.function === 'ARM_MPU');
+            const nonA53Procs = processors.filter(p => p.function !== 'ARM_MPU');
+
+            // Add single A53 frequency dropdown if A53 cores exist
+            if (a53Cores.length > 0) {
+                const freqOptions = getFrequencyOptions(a53Cores[0], socId);
+                const row = document.createElement('div');
+                row.className = 'dense-row two-col';
+                row.innerHTML = `
+                    <span class="dense-label">A53 MPU (All Cores)</span>
+                    <select id="MPU_A53_Frequency" class="dense-input form-select dynamic-opp" data-default="${freqOptions.default}">
+                        ${freqOptions.options.map(opt => `<option value="${opt}" ${opt === freqOptions.default ? 'selected' : ''}>${opt} MHz</option>`).join('')}
+                    </select>
+                `;
+                freqContainer.appendChild(row);
+            }
+
+            // Add other processor frequencies (MCU, GPU, DSP, etc)
+            nonA53Procs.forEach(proc => {
+                const label = formatProcessorLabel(proc);
+                const freqOptions = getFrequencyOptions(proc, socId);
+
+                const row = document.createElement('div');
+                row.className = 'dense-row two-col';
+                row.innerHTML = `
+                    <span class="dense-label">${label}</span>
+                    <select id="${proc.key}_Frequency" class="dense-input form-select dynamic-opp" data-default="${freqOptions.default}">
+                        ${freqOptions.options.map(opt => `<option value="${opt}" ${opt === freqOptions.default ? 'selected' : ''}>${opt} MHz</option>`).join('')}
+                    </select>
+                `;
+                freqContainer.appendChild(row);
+            });
+        }
+
+        // Populate utilization container
+        const utilContainer = document.getElementById('processor-utilization-container');
+        if (utilContainer) {
+            utilContainer.innerHTML = '';
+
+            // Track ARM_MPU core index for sequential labeling
+            let mpuCoreIndex = 0;
+
+            processors.forEach(proc => {
+                const label = formatProcessorLabel(proc, mpuCoreIndex);
+
+                // Increment counter for ARM_MPU cores
+                if (proc.function === 'ARM_MPU') {
+                    mpuCoreIndex++;
+                }
+
+                const defaultUtil = proc.function === 'ARM_MPU' && mpuCoreIndex === 1 ? 100 : 1;
+
+                const row = document.createElement('div');
+                row.className = 'dense-row two-col';
+                row.innerHTML = `
+                    <span class="dense-label">${label}</span>
+                    <div style="display:flex; align-items:center; gap: 4px; width: 100%;">
+                        <input type="range" id="${proc.key}_Util_slider" min="0" max="100" value="${defaultUtil}"
+                            class="dense-slider" style="flex:1; width:50px;">
+                        <input type="number" id="${proc.key}_Util" class="dense-input form-number" value="${defaultUtil}"
+                            style="width: 55px; padding: 0.1rem; text-align: right;">
+                    </div>
+                `;
+                utilContainer.appendChild(row);
+            });
+        }
+
+        // Rebind events for the new inputs
+        bindSliderEvents();
+    }
+
+    function formatProcessorLabel(proc, mpuCoreIndex) {
+        // Format processor label for display
+        if (proc.function === 'ARM_MPU') {
+            // A53 cores: use sequential index to avoid duplicates
+            // mpuCoreIndex is passed in and incremented for each ARM_MPU
+            if (mpuCoreIndex !== undefined) {
+                return `A53-${mpuCoreIndex}`;
+            }
+            // Fallback to instance name if index not provided
+            const coreNum = proc.instance.replace('_', '');
+            return `A53-${coreNum}`;
+        } else if (proc.function === 'ARM_MCU') {
+            // MCU cores: show physical name
+            if (proc.name.includes('m4')) {
+                return 'MCU M4F';
+            } else if (proc.name.includes('pulsar')) {
+                return 'R5F';
+            } else if (proc.name.includes('dm')) {
+                return 'Domain Manager';
+            }
+            return 'MCU';
+        } else if (proc.function === 'GPU') {
+            return 'GPU';
+        } else if (proc.function === 'DSP') {
+            return 'DSP';
+        }
+        return proc.name;
+    }
+
+    function getFrequencyOptions(proc, socId) {
+        // Define frequency options for each processor type
+        // These should ideally come from the Excel OPP data, but for now use reasonable defaults
+
+        if (proc.function === 'ARM_MPU') {
+            // A53 cores
+            if (socId === 'am62x') {
+                return { options: [1400, 1250, 1000, 800, 250, 0], default: 1250 };
+            } else if (socId === 'am62p') {
+                return { options: [1400, 1250, 1000, 800, 250, 0], default: 1250 };
+            }
+        } else if (proc.function === 'ARM_MCU') {
+            // MCU cores (M4F, Pulsar, DM)
+            return { options: [800, 400, 0], default: 400 };
+        } else if (proc.function === 'GPU') {
+            return { options: [800, 500, 250, 0], default: 0 };
+        } else if (proc.function === 'DSP') {
+            return { options: [1000, 750, 500, 0], default: 500 };
+        }
+
+        return { options: [400, 200, 0], default: 400 };
+    }
+
+    function bindSliderEvents() {
+        // Bind slider-to-input sync events
+        const sliders = document.querySelectorAll('.dense-slider');
+        sliders.forEach(slider => {
+            const inputId = slider.id.replace('_slider', '');
+            const input = document.getElementById(inputId);
+
+            if (input) {
+                slider.addEventListener('input', (e) => {
+                    input.value = e.target.value;
+                    updateConfigFromUI();
+                });
+
+                input.addEventListener('input', (e) => {
+                    slider.value = e.target.value;
+                    updateConfigFromUI();
+                });
+            }
+        });
     }
 
     function updateConfigFromUI() {

@@ -1,0 +1,138 @@
+{
+  "dropdowns": {
+    "uart_modes": [
+      {
+        "id": "off",
+        "label": "Off / Powered Down",
+        "description": "UART disabled"
+      },
+      {
+        "id": "115200",
+        "label": "115.2 kbps",
+        "description": "Standard baud rate"
+      },
+      {
+        "id": "230400",
+        "label": "230.4 kbps",
+        "description": "High speed"
+      },
+      {
+        "id": "460800",
+        "label": "460.8 kbps",
+        "description": "Very high speed"
+      }
+    ],
+    "spi_modes": [
+      {
+        "id": "off",
+        "label": "Off / Powered Down",
+        "description": "SPI disabled"
+      },
+      {
+        "id": "10mhz",
+        "label": "10 MHz",
+        "description": "Standard speed"
+      },
+      {
+        "id": "25mhz",
+        "label": "25 MHz",
+        "description": "High speed"
+      },
+      {
+        "id": "48mhz",
+        "label": "48 MHz",
+        "description": "Maximum speed"
+      }
+    ],
+    "i2c_modes": [
+      {
+        "id": "off",
+        "label": "Off / Powered Down",
+        "description": "I2C disabled"
+      },
+      {
+        "id": "100khz",
+        "label": "100 kHz (Standard)",
+        "description": "Standard I2C"
+      },
+      {
+        "id": "400khz",
+        "label": "400 kHz (Fast)",
+        "description": "Fast I2C"
+      },
+      {
+        "id": "1mhz",
+        "label": "1 MHz (Fast Plus)",
+        "description": "Very fast I2C"
+      }
+    ]
+  },
+  "frequencies": {
+    "main_sms_0_frequency_[mhz]": {
+      "pll": "MAIN PLL 15 HSDIV 0",
+      "domain": "MAIN SMS 0 Frequency [MHz]",
+      "freq_low": 400.0,
+      "freq_high": 400.0
+    },
+    "domain_manager_(wkup)_r5fss_0_frequency_[mhz]": {
+      "pll": "MAIN PLL 15 HSDIV 2\nMCU PLL 0 HSDIV 0",
+      "domain": "Domain Manager (WKUP) R5FSS 0 Frequency [MHz]",
+      "freq_low": 800.0,
+      "freq_high": 800.0
+    },
+    "mcu_r5fss_0_frequency_[mhz]": {
+      "pll": "MCU PLL 0 HSDIV 3",
+      "domain": "MCU R5FSS 0 Frequency [MHz]",
+      "freq_low": 800.0,
+      "freq_high": 800.0
+    },
+    "main_a53ss_frequency_[mhz]": {
+      "pll": "MAIN PLL 8 HSDIV0",
+      "domain": "MAIN A53SS Frequency [MHz]",
+      "freq_low": 1250.0,
+      "freq_high": 1250.0
+    },
+    "main_gpu_0_frequency_[mhz]": {
+      "pll": "MAIN PLL 6 HSDIV 0",
+      "domain": "MAIN GPU 0 Frequency [MHz]",
+      "freq_low": 720.0,
+      "freq_high": 720.0
+    },
+    "main_video_encoder/decoder_0_frequency_[mhz]": {
+      "pll": "MAIN PLL 2 HSDIV 4",
+      "domain": "MAIN Video Encoder/Decoder 0 Frequency [MHz]",
+      "freq_low": 500.0,
+      "freq_high": 500.0
+    },
+    "lpddr4_emif_0_[mt/s]": {
+      "pll": "MAIN PLL 12 HSDIV0",
+      "domain": "LPDDR4 EMIF 0 [MT/s]",
+      "freq_low": 3733.0,
+      "freq_high": 3733.0
+    },
+    "mcu_ss_/_wkup_modules_clk_[mhz]_(mcu_sysclk)": {
+      "pll": "MCU PLL 0 HSDIV 0",
+      "domain": "MCU SS / WKUP Modules CLK [MHz] (MCU SYSCLK)",
+      "freq_low": 400.0,
+      "freq_high": 400.0
+    },
+    "main_modules_clk_[mhz]_(sysclk)": {
+      "pll": "MAIN PLL 0 HSDIV 0",
+      "domain": "MAIN Modules CLK [MHz] (SYSCLK)",
+      "freq_low": 500.0,
+      "freq_high": 500.0
+    },
+    "device_manager_domain_clk_[mhz]": {
+      "pll": "MAIN PLL 15 HSDIV 0\nMCU PLL 0 HSDIV 0",
+      "domain": "Device Manager Domain CLK [MHz]",
+      "freq_low": 400.0,
+      "freq_high": 400.0
+    },
+    "hsm_domain_clk": {
+      "pll": "MAIN PLL 15 HSDIV 0",
+      "domain": "HSM Domain CLK",
+      "freq_low": 400.0,
+      "freq_high": 0.0
+    }
+  }
+}
