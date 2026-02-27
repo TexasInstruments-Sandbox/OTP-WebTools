@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Estimator | TI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="power-estimator.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand-section">
+                <div class="nav-brand">TI Tools</div>
+                <div class="nav-tagline">Web-based utilities for TI MPU processors</div>
+            </a>
+            <div class="nav-links">
+                <!-- Identical nav links to index.html -->
+                <a href="https://github.com/TexasInstruments" target="_blank" rel="noopener noreferrer"
+                    class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                    </svg> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-large">
+        <!-- Beta Disclaimer Banner -->
+        <div class="beta-banner" id="beta-banner">
+            <span class="beta-badge">BETA</span>
+            <span class="beta-text">
+                This is an unofficial web prototype. For accurate, production-grade estimates use the official
+                <a href="https://www.ti.com/tool/AM62X-PET-CALC" target="_blank" rel="noopener">AM62X Power Estimation
+                    Tool ↗</a>.
+                Results here are for reference and exploration only.
+            </span>
+        </div>
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-link">← Back to Tools</a>
+                <h1>Power Estimation Tool</h1>
+                <p class="subtitle">Estimate power consumption for Texas Instruments SoCs</p>
+            </div>
+
+            <div class="soc-selector">
+                <label for="soc-select">Select SoC Target:</label>
+                <select id="soc-select" class="form-select">
+                    <!-- Populated by JS -->
+                </select>
+            </div>
+        </header>
+
+        <!-- Config Manager Toolbar -->
+        <div class="config-manager-bar" id="config-manager">
+            <div class="config-manager-left">
+                <span class="config-manager-label">⚙ Configs:</span>
+                <div class="config-slots" id="config-slots">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="config-manager-right">
+                <button class="config-btn config-btn-save" id="btn-save-config"
+                    title="Save current settings to a slot">💾 Save</button>
+                <button class="config-btn config-btn-compare" id="btn-compare-configs"
+                    title="Compare power across saved configs">⚖ Compare</button>
+                <button class="config-btn config-btn-export" id="btn-export-config"
+                    title="Export current config as JSON file">⬇ Export JSON</button>
+                <label class="config-btn config-btn-import" title="Load a JSON config file">
+                    ⬆ Import JSON
+                    <input type="file" id="import-config-input" accept=".json" style="display:none;">
+                </label>
+            </div>
+        </div>
+
+        <!-- Power Summary Strip -->
+        <div class="power-summary-strip">
+            <div class="power-summary-item power-summary-item--primary">
+                <span class="power-summary-icon">⚡</span>
+                <div>
+                    <div class="power-summary-label">Total Power</div>
+                    <div class="power-summary-value"><span id="total-power-val">--</span> <span
+                            class="power-summary-unit">mW</span></div>
+                </div>
+            </div>
+            <div class="power-summary-divider"></div>
+            <div class="power-summary-item">
+                <span class="power-summary-icon">🔋</span>
+                <div>
+                    <div class="power-summary-label">Static Power (Leakage)</div>
+                    <div class="power-summary-value"><span id="leakage-power-val">--</span> <span
+                            class="power-summary-unit">mW</span></div>
+                </div>
+            </div>
+            <div class="power-summary-divider"></div>
+            <div class="power-summary-item">
+                <span class="power-summary-icon">⚙️</span>
+                <div>
+                    <div class="power-summary-label">Dynamic Power</div>
+                    <div class="power-summary-value"><span id="dynamic-power-val">--</span> <span
+                            class="power-summary-unit">mW</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compare Panel (toggled by Compare button) -->
+        <div id="compare-panel" class="compare-panel" style="display:none;">
+            <div class="compare-panel-header">
+                <h3>⚖ Config Comparison</h3>
+                <div class="compare-panel-header-right">
+                    <label class="cmp-toggle-label">
+                        <input type="checkbox" id="compare-show-rails"> Show Rails
+                    </label>
+                    <span class="compare-panel-hint">Check configs to include in chart</span>
+                    <div class="cmp-chart-type-toggle" role="group">
+                        <button class="cmp-type-btn active" id="cmp-type-grouped">Grouped</button>
+                        <button class="cmp-type-btn" id="cmp-type-sidebyside">Side-by-side</button>
+                        <button class="cmp-type-btn" id="cmp-type-stacked">Stacked</button>
+                    </div>
+                    <button class="compare-panel-close" id="compare-panel-close">✕ Close</button>
+                </div>
+            </div>
+            <!-- Chart full width -->
+            <div class="compare-chart-wrap">
+                <canvas id="compare-bar-chart"></canvas>
+            </div>
+            <!-- Table below, no horizontal scroll -->
+            <div class="compare-table-wrap">
+                <table class="cmp-table" id="compare-table">
+                    <thead>
+                        <tr>
+                            <th class="cmp-check-col"><input type="checkbox" id="cmp-select-all" title="Toggle all"
+                                    checked></th>
+                            <th>Config</th>
+                            <th>Total (mW)</th>
+                            <th>Static (mW)</th>
+                            <th>Dynamic (mW)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="compare-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <main class="power-app-grid">
+            <!-- LEFT COLUMN: Dense Configuration Sidebar -->
+            <aside class="config-sidebar">
+                <div class="panel">
+                    <h3>Configurations</h3>
+
+                    <!-- Global Settings (Temp, Corner) -->
+                    <div class="form-group">
+                        <label for="temperature-input">Junction Temp (°C): <span id="temp-val">38</span></label>
+                        <div class="slider-group">
+                            <input type="range" id="temperature-input" min="-40" max="125" value="38"
+                                class="form-range">
+                            <input type="number" id="temp-num" min="-40" max="125" value="38" class="form-number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="process-corner">Estimation Mode</label>
+                        <select id="process-corner" class="form-select">
+                            <option value="nominal">Nominal</option>
+                            <option value="strong" selected>Max</option>
+                        </select>
+                    </div>
+
+                    <!-- Accordion: Power Supply -->
+                    <div class="dense-accordion">
+                        <div class="dense-accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">
+                            <span>Power Supply (Voltages)</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="dense-accordion-content open">
+                            <div class="dense-row two-col">
+                                <span class="dense-label">VDD_CORE</span>
+                                <select id="VDD_CORE" class="dense-input form-select" data-default="0.75">
+                                    <option value="0.75" selected>0.75 V</option>
+                                    <option value="0.85">0.85 V</option>
+                                </select>
+                            </div>
+                            <div class="dense-row two-col">
+                                <span class="dense-label">VDDAR_CORE</span>
+                                <select id="VDDAR_CORE" class="dense-input form-select" data-default="0.85">
+                                    <option value="0.85" selected>0.85 V</option>
+                                    <option value="0.75">0.75 V</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Accordion 1: OPP -->
+                    <div class="dense-accordion">
+                        <div class="dense-accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">
+                            <span>Operating Performance Point (OPP)</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="dense-accordion-content open">
+                            <div class="dense-row two-col"><span class="dense-label">MPU A530/1/2/3</span>
+                                <select id="MPU_A530_1_2_3_Frequency" class="dense-input form-select dynamic-opp"
+                                    data-default="1250">
+                                    <option value="1400">1400 MHz</option>
+                                    <option value="1250" selected>1250 MHz</option>
+                                    <option value="1000">1000 MHz</option>
+                                    <option value="800">800 MHz</option>
+                                    <option value="250">250 MHz</option>
+                                </select>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">GPU</span>
+                                <select id="GPU_Frequency" class="dense-input form-select dynamic-opp" data-default="0">
+                                    <option value="800">800 MHz</option>
+                                    <option value="500">500 MHz</option>
+                                    <option value="250">250 MHz</option>
+                                    <option value="0" selected>0 MHz</option>
+                                </select>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">MCU M4F</span>
+                                <select id="MCU_M4F_Frequency" class="dense-input form-select dynamic-opp">
+                                    <option value="400" selected>400 MHz</option>
+                                    <option value="0">0 MHz</option>
+                                </select>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">PRU-SS</span>
+                                <select id="PRU_SS_Frequency" class="dense-input form-select dynamic-opp">
+                                    <option value="333" selected>333 MHz</option>
+                                    <option value="250">250 MHz</option>
+                                    <option value="200">200 MHz</option>
+                                    <option value="0">0 MHz</option>
+                                </select>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">HSM</span>
+                                <select id="HSM_Frequency" class="dense-input form-select dynamic-opp"
+                                    data-default="133">
+                                    <option value="400">400 MHz</option>
+                                    <option value="250">250 MHz</option>
+                                    <option value="133" selected>133 MHz</option>
+                                    <option value="0">0 MHz</option>
+                                </select>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">R5F</span>
+                                <select id="_R5F__Frequency" class="dense-input form-select dynamic-opp"
+                                    data-default="400">
+                                    <option value="800">800 MHz</option>
+                                    <option value="400" selected>400 MHz</option>
+                                    <option value="0">0 MHz</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2: Core Utilization -->
+                    <div class="dense-accordion">
+                        <div class="dense-accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">
+                            <span>Processor Core Utilization (%)</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="dense-accordion-content">
+                            <div class="dense-row two-col"><span class="dense-label">MPU-A530</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MPU_A530_Util_slider" min="0" max="100" value="100"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MPU_A530_Util" class="dense-input form-number" value="100"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">MPU-A531</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MPU_A531_Util_slider" min="0" max="100" value="1"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MPU_A531_Util" class="dense-input form-number" value="1"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">MPU-A532</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MPU_A532_Util_slider" min="0" max="100" value="1"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MPU_A532_Util" class="dense-input form-number" value="1"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">MPU-A533</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MPU_A533_Util_slider" min="0" max="100" value="1"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MPU_A533_Util" class="dense-input form-number" value="1"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">GPU</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="GPU_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="GPU_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">R5F</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="_R5F_Util_slider" min="0" max="100" value="1"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="_R5F_Util" class="dense-input form-number" value="1"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">MCU-M4F</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MCU_M4F_Util_slider" min="0" max="100" value="1"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MCU_M4F_Util" class="dense-input form-number" value="1"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">PRU-SS</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="PRU_SS_Util_slider" min="0" max="100" value="1"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="PRU_SS_Util" class="dense-input form-number" value="1"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">HSM</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="HSM_Util_slider" min="0" max="100" value="10"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="HSM_Util" class="dense-input form-number" value="10"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row two-col"><span class="dense-label">Security Accel</span>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="SEC_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="SEC_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 3: LVCMOS IO -->
+                    <div class="dense-accordion">
+                        <div class="dense-accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">
+                            <span>LVCMOS IO</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="dense-accordion-content">
+                            <div class="dense-row"
+                                style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold;">
+                                <span>Peripheral</span><span>Mode</span><span>Utilization %</span>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MCU UART</span><select id="MCU_UART_Mode"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MCU0_UART_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MCU0_UART_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">WKUP UART</span><select id="WKUP_UART_mode"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="WKUP_UART_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="WKUP_UART_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MAIN UART</span><select id="MAIN_UART_mode"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MAIN_UART_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MAIN_UART_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MAIN SPI_0</span><select
+                                    id="mcu_spi_0_modes" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MCU_SPI0_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MCU_SPI0_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MAIN SPI_1</span><select
+                                    id="mcu_spi_1_modes" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MCU_SPI1_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MCU_SPI1_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MCU SPI_0</span><select
+                                    id="mcu_2_spi_modes" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="mcu_2_spi_util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="mcu_2_spi_util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">OSPI</span><select id="fssul_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="OSPI_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="OSPI_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">GPMC</span><select id="gpmc_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="GPMC_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="GPMC_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">VOUT</span><select id="VOUT_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="VOUT_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="VOUT_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">CPSW Port 0</span><select
+                                    id="Ethernet_CPSW_Port0_mode" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="Ethernet_CPSW_Port0_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="Ethernet_CPSW_Port0_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">CPSW Port 1</span><select
+                                    id="Ethernet_CPSW_Port1_mode" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="Ethernet_CPSW_Port1_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="Ethernet_CPSW_Port1_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">McASP0</span><select id="mcasp0_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="McASP0_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="McASP0_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">McASP1</span><select id="mcasp1_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="McASP1_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="McASP1_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">PRU-SS</span><select id="icssm_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="icssm_util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="icssm_util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">I2C (Main)</span><select id="i2c_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="I2C_Main_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="I2C0_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">I2C (MCU)</span><select id="i2c_mcu_modes"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="I2C_MCU_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="I2C_MCU_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">GPIO</span><select id="gpio_modes"
+                                    class="dense-input form-select" data-type="dropdown"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="GPIO_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="GPIO0_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 4: Peripherals -->
+                    <div class="dense-accordion">
+                        <div class="dense-accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">
+                            <span>Peripherals</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="dense-accordion-content">
+                            <div class="dense-row"
+                                style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold;">
+                                <span>Peripheral</span><span>Mode</span><span>Utilization %</span>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">DDR Type/Rate</span><select id="ddr_modes"
+                                    class="dense-input form-select" data-type="dropdown"
+                                    data-default="ddr4_1600_16"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="DDR_TypeRate_Util_slider" min="0" max="100" value="20"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="DDR_TypeRate_Util" class="dense-input form-number" value="20"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">DDR WR %</span><span class="dense-input"
+                                    style="background:transparent; border:none;"></span>
+                                <div
+                                    style="display:flex; align-items:center; gap: 4px; width: 100%; justify-content: flex-end; padding-right: 0.5rem;">
+                                    <span
+                                        style="font-weight: 600; color: var(--text-primary); font-size: 0.85rem;">50%</span>
+                                </div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">USB2 Port 0</span><select
+                                    id="USB2_modes_port0" class="dense-input form-select" data-type="dropdown"
+                                    data-default="power_down"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="USB2_Port_0_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="USB2_Port_0_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">USB2 Port 1</span><select
+                                    id="USB2_modes_port1" class="dense-input form-select" data-type="dropdown"
+                                    data-default="power_down"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="USB2_Port1_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="USB2_Port1_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MMC/SD0 (8b)</span><select id="MMC_8b_mode"
+                                    class="dense-input form-select" data-type="dropdown" data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MMC_SD0_8b_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MMC_SD0_8b_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MMC/SD1 (4b)</span><select
+                                    id="MMC_4b_0_mode" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MMC_SD1_4b_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MMC_SD1_4b_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">MMC/SD2 (4b)</span><select
+                                    id="MMC_4b_1_mode" class="dense-input form-select" data-type="dropdown"
+                                    data-default="off"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="MMC_SD2_4b_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="MMC_SD2_4b_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">OLDI</span><select id="oldi_modes"
+                                    class="dense-input form-select" data-type="dropdown"
+                                    data-default="disabled"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="OLDI_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="OLDI_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                            <div class="dense-row"><span class="dense-label">CSI</span><select id="csi_modes"
+                                    class="dense-input form-select" data-type="dropdown"
+                                    data-default="power_down_reset"></select>
+                                <div style="display:flex; align-items:center; gap: 4px; width: 100%;"><input
+                                        type="range" id="CSI_Util_slider" min="0" max="100" value="0"
+                                        class="dense-slider" style="flex:1; width:50px;"><input type="number"
+                                        id="CSI_Util" class="dense-input form-number" value="0"
+                                        style="width: 55px; padding: 0.1rem; text-align: right;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- RIGHT COLUMN: Results Dashboard -->
+            <section class="results-main">
+
+                <div class="panel mt-4">
+                    <h3
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                        <span>Power Visualizations</span>
+                        <label class="cmp-toggle-label" style="font-weight: normal; font-size: 0.85rem;">
+                            <input type="checkbox" id="main-show-rails"> Show Rails
+                        </label>
+                    </h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;">
+                        <div style="width: 100%; height: 250px; padding: 1rem 0;">
+                            <canvas id="power-breakdown-chart"></canvas>
+                        </div>
+                        <div style="width: 100%; height: 250px; padding: 1rem 0;">
+                            <canvas id="static-dynamic-chart"></canvas>
+                        </div>
+                        <div style="width: 100%; height: 250px; grid-column: 1 / -1; padding: 1rem 0;">
+                            <canvas id="category-bar-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel mt-4">
+                    <h3>Power Supply Summary</h3>
+                    <table class="dense-table" style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+                        <thead>
+                            <tr
+                                style="border-bottom: 2px solid var(--border-color); text-align: left; font-size: 0.8rem; color: var(--text-muted);">
+                                <th style="padding: 0.5rem;">Supply Rail</th>
+                                <th style="padding: 0.5rem;">Voltage (V)</th>
+                                <th style="padding: 0.5rem; text-align: right;">Power (mW)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rail-summary-body" style="font-size: 0.85rem;">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="results-panel mt-4">
+                    <h3 style="margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>⚠️</span> Simulation Notes
+                    </h3>
+                    <p style="color: var(--text-color); line-height: 1.6; margin-bottom: 0;">
+                        The power estimation provided is intended for planning purposes only and should not replace
+                        detailed system-level characterization. Calculations are based on average active typical silicon
+                        across simulated process corners and temperatures. Max power estimation mode introduces an
+                        over-guardband algorithm.</p>
+                </div>
+            </section>
+        </main>
+
+
+    </div> <!-- Close .container -->
+
+    <footer>
+        <p>TI Tools | Web utilities for TI MPU processor development</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/am62x_dropdowns.js"></script>
+    <script src="data/am62x_socdb.js"></script>
+    <script src="data/am62x_usecases.js"></script>
+    <script src="data/am62x_pet_mapping.js"></script>
+    <script src="data/am62x_power_data.js"></script>
+    <script src="config-manager.js"></script>
+    <script src="power-estimator.js"></script>
+
+</body>
+
+</html>
