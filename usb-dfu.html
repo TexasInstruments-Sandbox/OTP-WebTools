@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USB DFU Bootloader Tool | TI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="navbar.js"></script>
+    <style>
+        #connect-btn:hover:not(:disabled) {
+            background-color: #CC0000 !important;
+            border-color: #CC0000 !important;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar loaded by navbar.js -->
+
+    <div class="container">
+        <header>
+            <h1>TI Tools</h1>
+            <p class="subtitle">USB DFU Bootloader Tool</p>
+            <div class="header-links">
+                <a href="index.html" class="doc-link">
+                    ← Back to Tools
+                </a>
+                <a href="https://software-dl.ti.com/tisci/esd/latest/index.html"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="doc-link">
+                    View Official Documentation
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Browser Compatibility Warning -->
+            <section class="info-banner" id="browser-warning" style="display: none; background-color: #fff3cd; border-color: #ffc107;">
+                <div class="banner-content">
+                    <span class="banner-icon">⚠️</span>
+                    <div>
+                        <strong>Browser Not Supported:</strong> This tool requires WebUSB API support. Please use Chrome 61+ or Edge 79+. Firefox and Safari are not currently supported.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="info-section">
+                <h2>Getting Started</h2>
+                <p>Upload bootloader images (tiboot3.bin) to TI K3 devices via USB boot mode. Follow these steps:</p>
+
+                <div class="tools-grid" style="margin-top: 1rem;">
+                    <div class="tool-card" style="cursor: default; padding: 1.25rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">1. Set Boot Mode</h3>
+                        <p style="margin: 0; font-size: 0.9rem;">Configure your device boot switches to USB boot mode (refer to your device user guide)</p>
+                    </div>
+                    <div class="tool-card" style="cursor: default; padding: 1.25rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">2. Connect Device</h3>
+                        <p style="margin: 0; font-size: 0.9rem;">Connect via USB cable and power on the device</p>
+                    </div>
+                    <div class="tool-card" style="cursor: default; padding: 1.25rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">3. Upload Bootloader</h3>
+                        <p style="margin: 0; font-size: 0.9rem;">Connect to device in browser, select binary file, and upload</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Device Connection Section -->
+            <section class="input-section">
+                <h2>Device Connection</h2>
+                <div class="device-status" id="device-status" style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e0e0e0;">
+                    <span class="status-indicator" id="status-indicator" style="width: 12px; height: 12px; border-radius: 50%; background-color: #dc3545;"></span>
+                    <span id="status-text" style="font-weight: 500;">No device connected</span>
+                </div>
+                <button type="button" id="connect-btn" class="primary" style="margin-bottom: 1rem;">Connect Device</button>
+
+                <div id="device-info" style="display: none;">
+                    <div class="config-group" style="margin-top: 1rem;">
+                        <h3 style="margin-bottom: 1rem;">Device Information</h3>
+                        <div id="device-info-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Upload Section -->
+            <section class="input-section" id="upload-section" style="display: none;">
+                <h2>Upload Bootloader</h2>
+                <div id="drop-zone" style="
+                    border: 2px dashed #ccc;
+                    border-radius: 8px;
+                    padding: 3rem 2rem;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    background: white;
+                    margin-bottom: 1rem;">
+                    <input type="file" id="file-input" accept=".bin" style="display: none;">
+                    <div class="upload-prompt">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 1rem; color: #666;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem;">Click to select or drag and drop</p>
+                        <p class="file-hint" style="color: #666; font-size: 0.9rem; margin: 0;">Bootloader binary files (.bin) - tiboot3.bin, u-boot.img, etc.</p>
+                    </div>
+                </div>
+
+                <div id="file-info" style="display: none; margin-top: 1rem;">
+                    <div class="config-group">
+                        <h3 style="margin-bottom: 1rem;">Selected File</h3>
+                        <div id="file-info-content"></div>
+                    </div>
+                </div>
+
+                <button type="button" id="upload-btn" style="display: none; margin-top: 1rem;">Upload to Device</button>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="results-section" id="progress-section" style="display: none;">
+                <h2>Upload Progress</h2>
+                <div class="progress-container" style="margin-bottom: 1.5rem;">
+                    <div class="progress-bar" style="
+                        width: 100%;
+                        height: 30px;
+                        background-color: #e9ecef;
+                        border-radius: 4px;
+                        overflow: hidden;
+                        position: relative;
+                        margin-bottom: 0.75rem;">
+                        <div class="progress-fill" id="progress-fill" style="
+                            height: 100%;
+                            background: linear-gradient(90deg, #007C8C 0%, #00a0b0 100%);
+                            width: 0%;
+                            transition: width 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-weight: 500;
+                            font-size: 0.85rem;">
+                        </div>
+                    </div>
+                    <div class="progress-stats" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
+                        <span id="progress-percent">0%</span>
+                        <span id="progress-bytes">0 / 0 KB</span>
+                        <span id="progress-speed">0 KB/s</span>
+                    </div>
+                </div>
+                <div id="upload-status"></div>
+            </section>
+
+            <!-- Results/Status Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <h2>Results</h2>
+                <div id="results-content"></div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <h2>About This Tool</h2>
+                <p>This tool allows you to upload bootloader images to Texas Instruments K3 processors via USB boot mode using the WebUSB API. When a K3 device is configured to boot from USB, it appears as a USB device that can receive firmware uploads directly from your browser.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div>
+                        <h3 style="margin-bottom: 0.75rem;">Supported Devices</h3>
+                        <p style="margin-bottom: 0.5rem;">This tool supports TI K3 devices with USB boot capability:</p>
+                        <ul style="margin-left: 1.25rem;">
+                            <li><strong>AM62x series</strong> - AM625, AM623, AM621</li>
+                            <li><strong>AM64x series</strong> - AM6442, AM6441</li>
+                            <li><strong>AM65x series</strong> - AM6548, AM6546, AM6528, AM6526</li>
+                            <li><strong>J721E (Jacinto 7)</strong> - DRA829, TDA4VM</li>
+                            <li><strong>J7200</strong></li>
+                            <li>Other K3 devices with USB boot support</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 0.75rem;">Browser Compatibility</h3>
+                        <p style="margin-bottom: 0.5rem;">This tool requires the WebUSB API, which is supported in:</p>
+                        <ul style="margin-left: 1.25rem;">
+                            <li>Chrome 61+ (Windows, macOS, Linux)</li>
+                            <li>Edge 79+ (Windows, macOS)</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;"><strong>Not supported:</strong> Firefox and Safari do not currently support WebUSB.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 0.75rem;">How to Enter USB Boot Mode</h3>
+                <p>To configure your device for USB boot mode:</p>
+                <ol style="margin-left: 1.25rem; line-height: 1.6;">
+                    <li>Power off your device</li>
+                    <li>Set the boot mode switches according to your device's user guide (typically specific switch positions for USB boot)</li>
+                    <li>Connect a USB cable between the device and your computer</li>
+                    <li>Power on the device</li>
+                    <li>The device should appear as a USB device in your system (VID:PID <code>0451:6165</code> for AM62x/AM64x)</li>
+                </ol>
+                <p style="margin-top: 0.75rem;"><strong>Note:</strong> Boot switch configurations vary by device. Refer to your device's Evaluation Module User Guide for specific instructions.</p>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 0.75rem;">Upload Process</h3>
+                <p style="margin-bottom: 0.5rem;">This tool implements the USB DFU (Device Firmware Update) protocol to upload bootloader images:</p>
+                <ul style="margin-left: 1.25rem; line-height: 1.6;">
+                    <li><strong>tiboot3.bin</strong> - Initial bootloader (uses alternate interface 0: "bootloader")</li>
+                    <li>After tiboot3.bin loads, the device will present new interfaces for tispl.bin and u-boot.img</li>
+                    <li>Upload progress is shown in real-time with transfer speed and completion percentage</li>
+                    <li>The device may reset automatically after successful upload</li>
+                </ul>
+                <p style="margin-top: 0.75rem;"><strong>Expected behavior:</strong> After uploading tiboot3.bin, you should see the device reset and begin booting. Check your serial console for boot messages.</p>
+
+                <div class="disclaimer-box" style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 0.75rem;">⚠️ Important Safety Information</h3>
+                    <ul style="margin-left: 1.25rem; line-height: 1.6;">
+                        <li><strong>Device Compatibility:</strong> Ensure you are uploading the correct bootloader for your specific device model</li>
+                        <li><strong>File Integrity:</strong> Only use official TI bootloader images or images you have built from verified sources</li>
+                        <li><strong>Power Stability:</strong> Do not disconnect the device or interrupt power during upload</li>
+                    </ul>
+                </div>
+
+                <div class="resources-box" style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 0.75rem;">Resources</h3>
+                    <ul style="margin-left: 1.25rem;">
+                        <li><a href="https://software-dl.ti.com/tisci/esd/latest/index.html" target="_blank" rel="noopener">TI System Controller Interface Documentation →</a></li>
+                        <li><a href="https://www.ti.com/processors/sitara-arm/overview.html" target="_blank" rel="noopener">TI Sitara Processors Overview →</a></li>
+                        <li><a href="https://software-dl.ti.com/processor-sdk-linux/esd/docs/latest/index.html" target="_blank" rel="noopener">Processor SDK Linux Documentation →</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>TI Tools | USB DFU Bootloader Tool</p>
+        </footer>
+    </div>
+
+    <script src="usb-dfu.js"></script>
+</body>
+</html>
