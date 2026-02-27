@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UART SoC ID Parser - TI Web Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>UART SoC ID Parser</h1>
+        <nav>
+            <a href="index.html">← Back to Tools</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="input-section">
+                <h2>Input SoC ID Data</h2>
+                <div class="input-method-group">
+                    <h3>Choose Input Method:</h3>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="inputMethod" value="paste" checked>
+                            Paste hex data
+                        </label>
+                        <label>
+                            <input type="radio" name="inputMethod" value="file">
+                            Upload file
+                        </label>
+                    </div>
+                </div>
+
+                <div id="pasteMethod" class="input-method active">
+                    <label for="hexInput">Hex Data:</label>
+                    <textarea id="hexInput" placeholder="Paste your hex data here (e.g., 01000000011a00006a3765730000000000000000475020200101010001010100)&#10;Supports multiple lines and various formats (with or without 0x prefix, spaces, etc.)" rows="6"></textarea>
+                    <div class="format-hint">
+                        <strong>Supported formats:</strong>
+                        <ul>
+                            <li>Raw hex: <code>01000000011a00006a37657300000000</code></li>
+                            <li>With 0x prefix: <code>0x01000000 0x011a0000</code></li>
+                            <li>Spaced: <code>01 00 00 00 01 1a 00 00</code></li>
+                            <li>Multiple lines supported</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="fileMethod" class="input-method">
+                    <input type="file" id="fileInput" accept=".txt,.hex" style="display: none;">
+                    <button type="button" id="fileButton" class="secondary">Choose File</button>
+                    <span id="fileName" class="file-name"></span>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="parseButton">Parse SoC ID</button>
+                    <button type="button" id="clearButton" class="secondary">Clear</button>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Parsed Results</h2>
+                <div id="resultsContent"></div>
+                <div class="button-group">
+                    <button type="button" id="exportButton" class="secondary">Export as JSON</button>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>About UART SoC ID Parser</h2>
+                <p>This tool parses UART SoC ID data from Texas Instruments processors. The SoC ID contains information about the device including:</p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Header Information</h3>
+                        <ul>
+                            <li><strong>NumBlocks:</strong> Number of data blocks present</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Public ROM Information</h3>
+                        <ul>
+                            <li><strong>SubBlockId:</strong> Block identifier</li>
+                            <li><strong>SubBlockSize:</strong> Size of the block</li>
+                            <li><strong>DeviceName:</strong> TI device name (e.g., j7es, am64x)</li>
+                            <li><strong>DeviceType:</strong> Device type (GP, HS, etc.)</li>
+                            <li><strong>DMSC ROM Version:</strong> Device Management and Security Controller version</li>
+                            <li><strong>R5 ROM Version:</strong> ARM Cortex-R5 processor ROM version</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Secure ROM Information <span class="optional">(if present)</span></h3>
+                        <ul>
+                            <li><strong>Sec Prime:</strong> Security prime number</li>
+                            <li><strong>Key Revision:</strong> Security key revision</li>
+                            <li><strong>Key Count:</strong> Number of security keys</li>
+                            <li><strong>TI MPK Hash:</strong> TI Manufacturer Public Key hash</li>
+                            <li><strong>Customer MPK Hash:</strong> Customer Manufacturer Public Key hash</li>
+                            <li><strong>Unique ID:</strong> Device unique identifier</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-section">
+                    <h3>Example Usage</h3>
+                    <div class="example-data">
+                        <h4>Sample hex data:</h4>
+                        <code class="code-preview">01000000011a00006a3765730000000000000000475020200101010001010100</code>
+                        <p>This example shows SoC ID data for a j7es (Jacinto 7) device with GP (General Purpose) security type.</p>
+                    </div>
+                </div>
+
+                <div class="disclaimer-box">
+                    <h4>⚠️ Note</h4>
+                    <p>This tool is for development and debugging purposes. SoC ID data contains device-specific information and should be handled according to your organization's security policies.</p>
+                </div>
+
+                <div class="resources-section">
+                    <h3>Resources</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://software-dl.ti.com/tisci/esd/latest/index.html" target="_blank" rel="noopener">TI System Controller Interface Documentation</a></li>
+                        <li><a href="https://www.ti.com/processors" target="_blank" rel="noopener">TI Processors Overview</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Texas Instruments Incorporated. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/TexasInstruments/ti-web-tools" target="_blank" rel="noopener">View on GitHub</a> |
+            <a href="https://www.ti.com/legal" target="_blank" rel="noopener">Legal Information</a>
+        </p>
+    </footer>
+
+    <script src="parse-uart-socid.js"></script>
+</body>
+</html>

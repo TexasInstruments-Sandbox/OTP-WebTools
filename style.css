@@ -1440,3 +1440,217 @@ button.secondary:hover {
         height: 18px;
     }
 }
+
+/* UART SoC ID Parser Specific Styles */
+.input-method-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-method-group h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.radio-group label:hover {
+    background-color: var(--ti-grey-light);
+}
+
+.radio-group input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.input-method {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--ti-grey-light);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.input-method.active {
+    background-color: var(--card-bg);
+    opacity: 1;
+    border-color: var(--accent-color);
+}
+
+.format-hint {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    background-color: var(--ti-grey-light);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.format-hint strong {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.format-hint ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.format-hint code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85rem;
+}
+
+.file-name {
+    margin-left: 0.75rem;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.result-group {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.result-group h3 {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.5rem;
+    background-color: var(--ti-grey-light);
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.info-row:hover {
+    background-color: rgba(0, 124, 140, 0.1);
+}
+
+.info-label {
+    min-width: 160px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.info-value {
+    flex: 1;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+.info-value.device-name,
+.info-value.device-type {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.info-value.version {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.info-value.hash-value {
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.optional {
+    font-weight: normal;
+    font-size: 0.85rem;
+    color: var(--ti-grey);
+    font-style: italic;
+}
+
+.example-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--ti-grey-light);
+    border-radius: 8px;
+}
+
+.example-section h3,
+.example-section h4 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.example-data {
+    margin-top: 1rem;
+}
+
+.example-data h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.example-data p {
+    margin-top: 1rem;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+/* Mobile responsiveness for new elements */
+@media (max-width: 768px) {
+    .radio-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .info-label {
+        min-width: auto;
+        margin-bottom: 0.25rem;
+    }
+
+    .result-group {
+        padding: 1rem;
+    }
+}
