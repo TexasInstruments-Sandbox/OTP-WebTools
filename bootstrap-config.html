@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Configuration Tool | TI Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="navbar.js"></script>
+    <style>
+        .config-section {
+            background-color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .config-section h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .config-group {
+            margin-bottom: 15px;
+        }
+
+        .config-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: var(--ti-blue-dark);
+            font-size: 14px;
+        }
+
+        .config-group select,
+        .config-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .config-grid-full {
+            grid-column: 1 / -1;
+        }
+
+        .bit-diagram {
+            background-color: #f8f9fa;
+            border: 2px solid var(--ti-teal);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+
+        .bit-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 8px 10px;
+            background-color: white;
+            border-radius: 4px;
+            border-left: 4px solid var(--ti-red);
+        }
+
+        .bit-label {
+            flex: 0 0 150px;
+            font-weight: bold;
+            color: var(--ti-blue-dark);
+        }
+
+        .bit-value {
+            flex: 1;
+            text-align: center;
+            font-size: 16px;
+            color: var(--ti-red);
+            font-family: 'Courier New', monospace;
+        }
+
+        .bit-range {
+            flex: 0 0 100px;
+            text-align: right;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .result-display {
+            background: linear-gradient(135deg, var(--ti-blue-dark), var(--ti-teal));
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .result-display h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .result-value {
+            font-size: 36px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin: 10px 0;
+            letter-spacing: 3px;
+        }
+
+        .result-secondary {
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+
+        .info-table th {
+            background-color: var(--ti-blue-dark);
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .info-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 0;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-primary {
+            background-color: var(--ti-red);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #a00000;
+        }
+
+        .button-secondary {
+            background-color: var(--ti-teal);
+            color: white;
+        }
+
+        .button-secondary:hover {
+            background-color: #006070;
+        }
+
+        .description-text {
+            color: #666;
+            font-size: 12px;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        .warning-banner {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note-banner {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        details {
+            margin: 15px 0;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--ti-blue-dark);
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            user-select: none;
+        }
+
+        summary:hover {
+            background-color: #e9ecef;
+        }
+
+        details[open] summary {
+            margin-bottom: 15px;
+        }
+
+        .simplified-view {
+            background-color: white;
+            border: 2px solid var(--ti-red);
+            border-radius: 6px;
+            padding: 12px 20px;
+            margin: 15px 0;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            color: var(--ti-blue-dark);
+        }
+
+        .simplified-view .arrow {
+            color: var(--ti-teal);
+            margin: 0 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TI Tools</h1>
+            <p class="subtitle">Bootstrap Configuration Tool</p>
+            <div class="header-links">
+                <a href="index.html" class="doc-link">← Back to Tools</a>
+                <a href="https://www.ti.com/lit/pdf/spruiv7" target="_blank" class="doc-link">View K3 TRM</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="note-banner">
+                <strong>About This Tool:</strong> Configure bootstrap settings for TI K3 SoCs (AM62x, AM62Px, AM62Lx, AM62Ax, AM64x, AM243x, AM67x, J722S, TDA4VEN, TDA4AEN). The tool helps you set up the 16-bit boot mode configuration including PLL config, primary boot mode, primary boot mode config, backup boot mode, and backup boot mode config. Select your device to see device-specific boot mode options.
+            </div>
+
+            <section class="config-section">
+                <h2>Device & Use Case</h2>
+
+                <div class="config-grid">
+                    <div class="config-group">
+                        <label for="deviceSelect">Device:</label>
+                        <select id="deviceSelect">
+                            <option value="am62x">AM62x</option>
+                            <option value="am62px">AM62Px</option>
+                            <option value="am62lx">AM62Lx</option>
+                            <option value="am62ax">AM62Ax</option>
+                            <option value="am64x">AM64x / AM243x</option>
+                            <option value="j722s">AM67x / J722S / TDA4VEN / TDA4AEN</option>
+                        </select>
+                        <div class="description-text">Target device family</div>
+                    </div>
+
+                    <div class="config-group">
+                        <label for="useCaseSelect">Use Case:</label>
+                        <select id="useCaseSelect">
+                            <option value="sd_uart">SD Card + UART Backup (Default)</option>
+                            <option value="ospi_uart">OSPI + UART Backup</option>
+                            <option value="emmc_uart">eMMC + UART Backup</option>
+                            <option value="usb_uart">USB + UART Backup</option>
+                            <option value="ospi_usb">OSPI + USB Backup</option>
+                            <option value="sd_usb">SD Card + USB Backup</option>
+                            <option value="uart_only">UART Only (No Backup)</option>
+                            <option value="usb_only">USB Only (No Backup)</option>
+                            <option value="custom">Custom Configuration</option>
+                        </select>
+                        <div class="description-text">Common boot configurations</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AM62Lx Pincount Mode Selection (Hidden by default) -->
+            <section class="config-section" id="pincountModeSection" style="display: none;">
+                <h2>Pincount Mode (AM62Lx Only)</h2>
+                <div class="note-banner" style="margin-bottom: 15px;">
+                    <strong>AM62Lx Feature:</strong> This device supports Full Pincount mode (using all 16 bootstrap pins) or Reduced Pincount mode (using only 4 pins - BOOTMODE[15:12]). Reduced mode selects from predefined boot configurations.
+                </div>
+                <div class="config-group">
+                    <label for="pincountModeSelect">Pincount Mode:</label>
+                    <select id="pincountModeSelect">
+                        <option value="full">Full Pincount (16 pins - All options)</option>
+                        <option value="reduced">Reduced Pincount (4 pins - Preset options)</option>
+                    </select>
+                    <div class="description-text">Select bootstrap pin mapping mode</div>
+                </div>
+            </section>
+
+            <!-- Reduced Pincount Configuration (AM62Lx Only) -->
+            <section class="config-section" id="reducedPincountConfig" style="display: none;">
+                <h2>Reduced Pincount Options</h2>
+                <div class="config-group">
+                    <label for="reducedPincountSelect">Boot Configuration Preset:</label>
+                    <select id="reducedPincountSelect">
+                        <option value="1001" selected>Fixed 2: FSS0 QSPI CS0, UART, 25 MHz</option>
+                        <option value="0110">Efuse Bootmode1: DEVBOOT, None, 25 MHz (Programmable)</option>
+                        <option value="0111">Efuse Bootmode2: USB0 Host MSC, UART, 25 MHz (Programmable)</option>
+                        <option value="1000">Fixed 1: MMC0 eMMC Boot, USB DFU, 25 MHz</option>
+                        <option value="1010">Fixed 3: MMC1 4 BIT UDA FS, UART, 25 MHz</option>
+                        <option value="1011">Fixed 4: MMC0 eMMC Boot, MMC1, 25 MHz</option>
+                        <option value="1100">Fixed 5: FSS0 Serial NAND OSPI, UART, 25 MHz</option>
+                        <option value="1101">Fixed 6: FSS0 xSPI SFDP, UART, 25 MHz</option>
+                        <option value="1110">Fixed 7: EXT. HOST UART0, MMC1, 25 MHz</option>
+                        <option value="1111">Fixed 8: EXT. HOST USB0 DFU, MMC1, 25 MHz</option>
+                    </select>
+                    <div class="description-text">Select from predefined boot configurations (BOOTMODE[15:12])</div>
+                </div>
+            </section>
+
+            <section class="config-section" id="fullPincountConfig">
+                <h2>Boot Configuration</h2>
+
+                <div class="config-grid">
+                    <div class="config-group config-grid-full">
+                        <label for="pllConfig">PLL Configuration (Bits 0-2):</label>
+                        <select id="pllConfig">
+                            <option value="010">25 MHz (010)</option>
+                            <option value="011">Reserved (011)</option>
+                            <option value="100">Reserved (100)</option>
+                        </select>
+                        <div class="description-text">Reference clock frequency</div>
+                    </div>
+
+                    <div class="config-group">
+                        <label for="primaryBootMode">Primary Boot Mode (Bits 3-6):</label>
+                        <select id="primaryBootMode">
+                            <option value="0000">Serial NAND</option>
+                            <option value="0001">OSPI</option>
+                            <option value="0010">QSPI</option>
+                            <option value="0011">SPI</option>
+                            <option value="0100">Ethernet RGMII</option>
+                            <option value="0101">Ethernet RMII</option>
+                            <option value="0110">I2C</option>
+                            <option value="0111">UART</option>
+                            <option value="1000">MMCSD Boot (SD Card / eMMC UDA)</option>
+                            <option value="1001">eMMC Boot</option>
+                            <option value="1010">USB</option>
+                            <option value="1011">GPMC NAND</option>
+                            <option value="1100">GPMC NOR</option>
+                            <option value="1101">Fast-xSPI</option>
+                            <option value="1110">xSPI</option>
+                            <option value="1111">No-boot / Dev boot</option>
+                        </select>
+                        <div class="description-text">Primary boot device</div>
+                    </div>
+
+                    <div class="config-group">
+                        <label for="primaryBootConfig">Primary Boot Config (Bits 7-9):</label>
+                        <select id="primaryBootConfig">
+                            <option value="000">Mode 0</option>
+                            <option value="001">Mode 1</option>
+                            <option value="010">Mode 2</option>
+                            <option value="011">Mode 3</option>
+                            <option value="100">Mode 4</option>
+                            <option value="101">Mode 5</option>
+                            <option value="110">Mode 6</option>
+                            <option value="111">Mode 7</option>
+                        </select>
+                        <div class="description-text" id="primaryBootConfigDesc">Config for primary mode</div>
+                    </div>
+
+                    <div class="config-group">
+                        <label for="backupBootMode">Backup Boot Mode (Bits 10-12):</label>
+                        <select id="backupBootMode">
+                            <option value="000">None</option>
+                            <option value="001">USB</option>
+                            <option value="010">Reserved</option>
+                            <option value="011">UART</option>
+                            <option value="100">Ethernet</option>
+                            <option value="101">MMCSD Boot</option>
+                            <option value="110">SPI</option>
+                            <option value="111">I2C</option>
+                        </select>
+                        <div class="description-text">Fallback boot mode</div>
+                    </div>
+
+                    <div class="config-group">
+                        <label for="backupBootConfig">Backup Boot Config (Bit 13):</label>
+                        <select id="backupBootConfig">
+                            <option value="0">Config 0</option>
+                            <option value="1">Config 1</option>
+                        </select>
+                        <div class="description-text" id="backupBootConfigDesc">Config for backup mode</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="config-section">
+                <h2>Boot Mode Visualization</h2>
+
+                <div class="simplified-view" id="simplifiedView">
+                    25 MHz PLL <span class="arrow">→</span> OSPI Primary <span class="arrow">→</span> None Backup
+                </div>
+
+                <div class="bit-diagram">
+                    <div class="bit-row">
+                        <span class="bit-label" id="reservedLabel">Reserved</span>
+                        <span class="bit-value" id="reservedBits">00</span>
+                        <span class="bit-range">Bits 14-15</span>
+                    </div>
+                    <div class="bit-row">
+                        <span class="bit-label">Backup Config</span>
+                        <span class="bit-value" id="backupConfigBits">0</span>
+                        <span class="bit-range">Bit 13</span>
+                    </div>
+                    <div class="bit-row">
+                        <span class="bit-label">Backup Mode</span>
+                        <span class="bit-value" id="backupModeBits">000</span>
+                        <span class="bit-range">Bits 10-12</span>
+                    </div>
+                    <div class="bit-row">
+                        <span class="bit-label">Primary Config</span>
+                        <span class="bit-value" id="primaryConfigBits">000</span>
+                        <span class="bit-range">Bits 7-9</span>
+                    </div>
+                    <div class="bit-row">
+                        <span class="bit-label">Primary Mode</span>
+                        <span class="bit-value" id="primaryModeBits">0000</span>
+                        <span class="bit-range">Bits 3-6</span>
+                    </div>
+                    <div class="bit-row">
+                        <span class="bit-label">PLL Config</span>
+                        <span class="bit-value" id="pllConfigBits">010</span>
+                        <span class="bit-range">Bits 0-2</span>
+                    </div>
+                </div>
+
+                <div class="result-display">
+                    <h3>16-Bit Boot Mode Value</h3>
+                    <div class="result-value" id="binaryValue">0000 0000 0000 0000</div>
+                    <div class="result-secondary">Hex: <span id="hexValue">0x0000</span> | Decimal: <span id="decimalValue">0</span></div>
+                </div>
+            </section>
+
+            <section class="config-section">
+                <h2>Actions</h2>
+                <div class="button-group">
+                    <button class="button-primary" id="copyHexBtn">Copy Hex Value</button>
+                    <button class="button-primary" id="copyBinaryBtn">Copy Binary Value</button>
+                    <button class="button-secondary" id="exportConfigBtn">Export Configuration</button>
+                    <button class="button-secondary" id="resetBtn">Reset to Defaults</button>
+                </div>
+            </section>
+
+            <section class="config-section">
+                <h2>Reference Tables</h2>
+
+                <details>
+                    <summary>PLL Configuration (Bits 0-2)</summary>
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>B2</th>
+                                <th>B1</th>
+                                <th>B0</th>
+                                <th>Reference Clock (MHz)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>25 MHz</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>Reserved</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Reserved</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+
+                <details>
+                    <summary>Primary Boot Modes (Bits 3-6)</summary>
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Bits 3-6</th>
+                                <th>Boot Mode</th>
+                                <th>Common Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0000</td><td>Serial NAND</td><td>Serial NAND flash boot</td></tr>
+                            <tr><td>0001</td><td>OSPI</td><td>Octal SPI flash boot</td></tr>
+                            <tr><td>0010</td><td>QSPI</td><td>Quad SPI flash boot</td></tr>
+                            <tr><td>0011</td><td>SPI</td><td>Standard SPI flash boot</td></tr>
+                            <tr><td>0100</td><td>Ethernet RGMII</td><td>Network boot via RGMII</td></tr>
+                            <tr><td>0101</td><td>Ethernet RMII</td><td>Network boot via RMII</td></tr>
+                            <tr><td>0110</td><td>I2C</td><td>Boot from I2C EEPROM</td></tr>
+                            <tr><td>0111</td><td>UART</td><td>Serial console boot</td></tr>
+                            <tr><td>1000</td><td>MMCSD Boot</td><td>SD card or eMMC UDA boot</td></tr>
+                            <tr><td>1001</td><td>eMMC Boot</td><td>eMMC hardware boot partition</td></tr>
+                            <tr><td>1010</td><td>USB</td><td>USB device boot</td></tr>
+                            <tr><td>1011</td><td>GPMC NAND</td><td>Parallel NAND via GPMC</td></tr>
+                            <tr><td>1100</td><td>GPMC NOR</td><td>Parallel NOR via GPMC</td></tr>
+                            <tr><td>1101</td><td>Fast-xSPI</td><td>Fast xSPI configuration</td></tr>
+                            <tr><td>1110</td><td>xSPI</td><td>Extended SPI interface</td></tr>
+                            <tr><td>1111</td><td>No-boot/Dev boot</td><td>Development/debug mode</td></tr>
+                        </tbody>
+                    </table>
+                </details>
+
+                <details>
+                    <summary>Backup Boot Modes (Bits 10-12)</summary>
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Bits 10-12</th>
+                                <th>Backup Mode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>000</td><td>None (no backup)</td></tr>
+                            <tr><td>001</td><td>USB</td></tr>
+                            <tr><td>010</td><td>Reserved</td></tr>
+                            <tr><td>011</td><td>UART</td></tr>
+                            <tr><td>100</td><td>Ethernet</td></tr>
+                            <tr><td>101</td><td>MMCSD Boot</td></tr>
+                            <tr><td>110</td><td>SPI</td></tr>
+                            <tr><td>111</td><td>I2C</td></tr>
+                        </tbody>
+                    </table>
+                </details>
+            </section>
+        </main>
+
+        <footer>
+            <p>TI Tools | Bootstrap Configuration Tool</p>
+        </footer>
+    </div>
+
+    <script src="bootstrap-config.js"></script>
+</body>
+</html>
